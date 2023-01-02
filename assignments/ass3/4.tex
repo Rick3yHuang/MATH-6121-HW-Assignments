@@ -1,0 +1,11 @@
+\section{Question 4}
+
+\begin{question}
+    Let $G$ be a finite group, and let $H$ be a subgroup of $G$ of index $p$, with $p$ prime. If $n_H$ denotes the number of subgroups of $G$ conjugate to $H$, prove that $n_H=1$ if $H$ is normal in $G$, and that $n_H=p$ otherwise.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $G$ act on $G/H$ by conjugation, then $n_H = \lvert G.H \lvert$. If $H \trianglelefteq G$, then $\forall g \in G,\ gHg^{-1} = H$. Then, $G.H = \{H\}$, so that $n_H = \lvert G.H \rvert = 1$. If, $H \ntriangleleft G$, then by the S-O Theorem, we have $n_H = \lvert G.H \rvert = \tfrac{\lvert G \rvert}{G_H}$. Since $G_H = \{g \in G \mid gHg^-1 = H\}$, then $G_H = N_G(H)$. Because $\forall \; h \in H$, $hHh^{-1} = H$, $H \subseteq N_G(H)$. Moreover, since $N_G(H) \subseteq G$, then $\lvert N_G(H) \rvert \mid \lvert G \rvert$. Suppose there exist some element $g \in N_G(H)$ but $g \notin H$, then $\lvert N_G(H) \rvert > \lvert H \rvert$. However, since $[G:H] = p$, $N_G(H)$ can only be $G$. This is a contradiction since $H \ntriangleleft G$ (i.e. $N_G(H) \neq G$). Therefore, $G_H = N_G(H) = H$. Hence, $n_H = \tfrac{\lvert G \rvert}{\lvert H \rvert} = [G:H] = p$.
+    \end{proof}
+\end{answer}

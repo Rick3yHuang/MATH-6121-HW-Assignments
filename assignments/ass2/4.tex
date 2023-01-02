@@ -1,0 +1,59 @@
+\section{Question 4}
+
+\begin{question}
+    A subgroup $H$ of a finite group $G$ is called a Hall subgroup of $G$ if its index in $G$ is relatively prime to its order.
+\end{question}
+
+\subsection{Part a}
+
+\begin{question}
+    If $N$ is a normal Hall subgroup of $G$, show that $N$ is the unique subgroup of $G$ of order $|N|$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Suppose there is another subgroup $H \subseteq G$ such that $\lvert H \rvert = \lvert N \rvert$. Then, since $N \trianglelefteq G$, we know $\lvert NH \rvert = \tfrac{\lvert N \rvert \lvert H\rvert}{\lvert N \cap H \rvert} = \tfrac{\lvert N \rvert^2}{\lvert N \cap H \rvert}$ by the Third Isomorphism Theorem. Now, by Lagrange Theorem, we have $\lvert G \rvert  = \lvert N \rvert [G:N] = \lvert NH \rvert [G:NH]$. Therefore, we have
+        \begin{equation}
+            \begin{aligned}
+                &\lvert N \rvert [G:N] = \tfrac{\lvert N \rvert^2}{\lvert N \cap H \rvert}[G:NH]\\
+                \Rightarrow &[G:N] = \tfrac{\lvert N \rvert [G:NH]}{\lvert N \cap H \rvert}\\
+                \Rightarrow &[G:N] = [G:NH]\tfrac{\lvert N \rvert}{\lvert N \cap H \rvert}\\
+            \end{aligned}
+        \end{equation}
+        Next, by Lagrange Theorem, since $N \cap H \leqslant N$, $\lvert N \cap H \rvert \mid \lvert N \rvert$. Then, let $n = \tfrac{\lvert N \rvert}{\lvert N \cap H \rvert}$, then $n > 1$, since $N \neq H$, we know that $ n \mid \gcd([G:N], \lvert N \rvert)$. This contradicts with the assumption that $N$ is a normal Hall subgroup of $G$.
+    \end{proof}
+\end{answer}
+
+\subsection{Part b}
+
+\begin{question}
+    If $H$ is a Hall subgroup of $G$ and $N$ is a normal subgroup of $G$, show that $H \cap N$ is a Hall subgroup of $N$ and $H N / N$ is a Hall subgroup of $G / N$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        We could create a diagram \ref{eqn:4} from given information of the question.
+        \begin{equation}\label{eqn:4}
+        \xymatrix@C=2pc@R=3pc{
+            &G\ar@{-}[d]\\
+            &\ar@{-}[dl]HN\ar@{-}^{normal}[dr]\\
+            H\ar@{-}_{normal}[dr]&  &\ar@{-}[dl]N\\
+            &H \cap N
+        }
+        \end{equation}
+        Since $H \cap N \leqslant H$, then $\lvert H \cap N \rvert \mid \lvert H \rvert$ by Lagrange Theorem. Then, by since $N,H \leqslant G$, and $N \trianglelefteq G$, by the Third Isomorphism Theorem, we know that $N/H\cap N \equiv HN / H$, so that $[N:H\cap N] = [HN:H] = \tfrac{[G:H]}{[G:HN]}$. Therefore, $[N:H\cap N] \mid [G:H]$. Then, since $H$ is a Hall subgroup of $G$, then $\gcd([G:H],\lvert H \rvert) = 1$, so that $\gcd([N:H \cap N], \lvert H \cap N \rvert) = 1$. Hence, $H \cap N$ is a Hall subgroup of $N$.
+        
+        Similarly, according to the diagram \ref{eqn:4}, by Lagrange Theorem, we have $\lvert HN/N \rvert = \tfrac{\lvert HN \rvert}{\lvert N \rvert}$. Then by the Thrid Isomorphism Theorem, we have $\lvert HN/H \rvert = \tfrac{\frac{\lvert H \rvert \lvert N \rvert}{\lvert H \cap N \rvert}}{\lvert N \rvert} = \tfrac{\lvert H \rvert}{\lvert H \cap N \rvert}$. Therefore, $\lvert HN / N \rvert \mid \lvert H \rvert$. Next,
+        \begin{equation}
+            \begin{aligned}
+                [G/N: HN/N] &= \tfrac{[G:N]}{[HN:N]}\\
+                &= \tfrac{[G:N]}{[H:H\cap N]} \text{ (by the Third Isomorphism Theorem)}\\
+                &= \tfrac{[G:N]}{\frac{G:H\cap N}{[G:H]}} \text{ (from the diagram)}\\
+                &= \tfrac{[G:N][G:H]}{[G:H\cap N]}\\
+                &= [G:H]\tfrac{[G:N]}{[G:H\cap N]}\\
+                &= \tfrac{[G:H]}{[H:H\cap N]} \text{ (from the diagram)}\\
+            \end{aligned}
+        \end{equation}
+        Then, we know $[G/N:HN/N] \mid [G:H]$. By the hypothesis $\gcd([G:H],\lvert H \rvert) = 1$, we have $\gcd(\lvert HN/N \rvert, [G/N:HN/N])$. Hence, we showed that $HN/N$ is a Hall subgroup of $G/N$.
+    \end{proof}
+\end{answer}

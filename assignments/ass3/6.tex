@@ -1,0 +1,29 @@
+\section{Question 6}
+
+\subsection{Part a}
+
+\begin{question}
+    Show that a $p$-Sylow subgroup of the dihedral group $D_{2 n}$ of order $2 n$ is cyclic and normal for every odd prime $p$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Denote the subgroup of $D_{2n}$ that contains only the rotations as $R$. Then, since $\lvert R \rvert = n$, $p$ is an odd prime, and $2n = 2p^kl$ for some $k,l\in \mathbb{Z}^+$ and $\gcd(p,l) = 1$, we know that $p^k \mid \lvert R \rvert$. Then by the corollary from the Sylow Theorem \# 1, there exists a Sylow p-subgroup $P$ of $R$. Then since $R$ is cycle, the $P$ is cycle. Also, because $\gcd(2,p) = 1$, then $P$ is also a cycle Sylow p-subgroup of $D_{2n}$. Since $P \leqslant R$ and $R$ is cyclic therefore abelian, then $P \trianglelefteq R$. Thus, $P$ is the only Sylow $p$-group in $R$. $R$ is normal in $D_{2n}$ since $[D_{2n}:R] = 2$. Then, $\forall g \in D_{2n}$, $gRg^{-1} = R$ so we have $gPg^{-1} \subseteq gRg^{-1 \subseteq R}$. Because $\lvert gPg^{-1} \rvert = p^k$, then $gPg^{-1}$ is a Sylow $p$-subgroup of $R$ for all $g \in D_{2n}$. Then, $gPg^{-1} = P$ for all $g \in D_{2n}$. This means $P \trianglelefteq D_{2n}$.
+    \end{proof}
+\end{answer}
+
+\subsection{Part b}
+
+\begin{question}
+    If $m$ is the largest odd divisor of $n$, show that $D_{2 n}$ has exactly $m$ 2-Sylow subgroups.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $\lvert D_{2n} \rvert = 2^km$. Let $P \in Syl_2(D_{2n})$ and $P_0 \in Syl_2(R)$ such that $P\cap R \in P_0$. Indeed, since $P\cap R \leqslant P$, then $\lvert P \cap R \rvert = p^l$ for some $l$. Then by the Sylow Theorem \#2, we have $P\cap R \in P_0$. Then, since $\lvert P \rvert = 2^k$ and $\lvert P_0 \rvert = 2^{k-1}$. By Sylow Theorem \#2 and \#3, we have $P_0 \leqslant gPg^{-1}$ for some $g \in D_{2n}$. Given that $gRg^{-1} = R$ for all $g$, we have $P_0 \subseteq g^{-1}Rg$ for all $g$. Therefore, $\lvert P_0 \rvert \mid \lvert P \cap R\rvert$, i.e. $2^{k-1}\mid \lvert P \cap R \rvert$. Since $\lvert P \cap R \rvert \mid \lvert R \rvert = 2^{k-1}m$. Then, $\lvert P \cap R \rvert = 2^{k-1}$. Because $\lvert P \rvert = 2^k$, then there are $2^{k-1}$ element in $P$ are reflections.
+        
+        Let $\tau$ be a reflection in $D_{2n}$. Then, we know that $\lvert \langle \tau \rangle\rvert = 2$. Since $2 \mid \lvert P \rvert$, then $\langle \tau \rangle \subset P$ for $P \in Syl_2(D_{2n})$. Therefore, every reflection need to be contained in some Sylow $2$-subgroup of $D_{2n}$. There are $2^{k-1}m$ reflections in total. Then, there must be at least $k$ Sylow $2$-groups, i.e. $k leq n_2$
+        
+        Then, by Sylow Theorem \#3, we have $n_2 \mid 2^km$ and $n_2 \equiv 1 \text{ (mod $p$)}$. Then, we know that $n_2 \mid m$. Therefore, $n_2 = m$.
+    \end{proof}
+\end{answer}

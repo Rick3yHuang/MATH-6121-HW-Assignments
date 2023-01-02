@@ -1,0 +1,30 @@
+\section{Question 2}
+
+\begin{question}
+    Let $p, q$ be distinct primes. If a group $G$ of order $p q$ acts on a set $X$ having $p q-p-q$ elements, show that there is a fixed point for this action.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Assume by contradiction that there is no fixed point for this action. Let $F = \{x \in X \mid g.x = x \, \forall \, g \in G\}$ denotes the set of fixed point of this action. Then, we can derive the following equation from the class equation:
+        \begin{equation}\label{eqn:eqn1}
+            \lvert X \rvert = \lvert F \rvert + \sum_{x \in A} [G:G_x] = \lvert F \rvert + \sum_{x \in A} \lvert G.x\rvert \text{ (by the Orbit-Stabilizer Theorem)},
+        \end{equation}
+        where $A \subseteq X$ has exactly one element from each non-singleton orbit. By assumption, we know $\lvert F \rvert = 0$, which means $\lvert X \rvert = \sum_{x \in A} \lvert G.x \rvert$. Also, since $\lvert G.x \rvert = [G:G_x]$ and G is finite, we know that $\lvert G.x \rvert \mid \lvert G \rvert = pq$ by the Lagrange Theorem. Then, we know that $\lvert G.x \rvert = p,\,q,$ or $pq$ because $\lvert G.x \rvert \neq 1$ by assumption. Therefore, from Equation \ref{eqn:eqn1}, we know that
+        \begin{equation}
+            \begin{aligned}
+                &\lvert X \rvert = mp + nq + rpq, \quad \text{for some nonnegative integers $m$, $n$, and $r$}\\
+                \Rightarrow &pq-p-q = mp + nq + rpq\\
+                \Rightarrow &pq-p-q \equiv mp + nq + rpq \; (\mod p)\\
+                \Rightarrow &-q \equiv nq \; (\mod p)\\
+                \Rightarrow &nq+q \equiv 0 \; (\mod p)\\
+                \Rightarrow &(n+1)q \equiv 0 \; (\mod p)
+            \end{aligned}
+        \end{equation}
+        Hence, $p \mid (n+1)q$. Because $p,\,q$ are distinct primes, we know that $p \nmid q$, then $p \mid n+1$, which means $p \leq n+1 \Rightarrow p-1 \leq n$. Thus,
+        \begin{equation}
+            \lvert X \rvert = mp+nq+rpq \geq nq \geq (p-1)q \geq pq - q > pq - p - q = \lvert X \rvert
+        \end{equation}
+        since $p > 0$. Here we have a contradiction of $\lvert X \rvert > \lvert X \rvert$. Thus, $\lvert F \rvert > 0$, i.e. there is a fixed point for the action of $G$ on $X$.
+    \end{proof}
+\end{answer}

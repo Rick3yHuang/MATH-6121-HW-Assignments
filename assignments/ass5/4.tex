@@ -1,0 +1,64 @@
+\section{Question 4}
+
+\begin{question}
+    Let $H$ be a subgroup of a finite abelian group $G$. Show that $G$ has a subgroup which is isomorphic to $G / H$. Give examples where the conclusion fails if we omit either the word 'finite' or 'abelian'.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        First, because $G$ is finite abelian, then $G/H$ is also finite abelian. Then, by part $5$, we know that $G \cong \hat{G}$ and $G/H \cong \widehat{G/H}$. From the natural homomorphism $\pi: G \onto G/H$, we know that $\forall f \in \widehat{G/H}$, there exists a unique $f' = f \circ \pi \in \hat{G}$ that makes the diagram in the equation \ref{eqn:5} commute.
+        \begin{equation}\label{eqn:5}
+            \xymatrix@C=3pc@R=4pc{
+                G\ar@{-->}[dr]_{\exists !f' = f\circ \pi}\ar@{->>}[r]^{\pi}&G/H\ar[d]^f\\
+                &\mathbb{C}&
+            }
+        \end{equation}
+        Now, we define a map:
+        \begin{equation}
+            \begin{aligned}
+                \varphi: \widehat{G/H} &\to \hat{G}\\
+                f &\mapsto f' = f \circ \pi
+            \end{aligned}
+        \end{equation}
+        
+        First, let $f,g \in \widehat{G/H}$ such that $f = g$ and let $a \in G$, then $\varphi(f)(a) = f \circ \pi(a) = g \circ \pi(a) = \varphi(g)(a)$. Then, $\varphi$ is welled-defined.
+        
+        Second,
+        \begin{equation}
+            \begin{aligned}
+                \varphi(fg)(a) &= ((fg) \circ \pi)(a)\\
+                &= (fg)(\pi(a))\\
+                &= f(\pi(a))g(\pi(a))\\
+                &\text{ (since $\widehat{G/H}$ has binary operation of pointwise multiplication of functions)}\\
+                &= ((f \circ \pi)(a))((g\circ \pi)(a))\\
+                &= ((f \circ \pi)(g \circ \pi))a\\
+                &\text{ (since $\hat{G}$ has binary operation of pointwise multiplication of functions)}\\
+                &= (\varphi(f)\varphi(g))(a)
+            \end{aligned}
+        \end{equation}
+        This shows that $\varphi$ is a homomorphism.
+        
+        Eventually, let $f,g \in \widehat{G/H}$ such that $\varphi(f) = \varphi(g)$. Then,
+        \begin{equation}
+            \begin{aligned}
+                &\varphi(f)(a) = \varphi(g)(a)\;\forall a \in G\\
+                \Rightarrow & (f \circ \pi)(a) = (g \circ \pi)(a) \; \forall a \in G\\
+                \Rightarrow & f(aH) = g(aH) \; \forall aH \in G/H
+            \end{aligned}
+        \end{equation}
+        This shows $f = g$. Hence, $\varphi$ is injective. Then $\ker \varphi = \{id\}$ and therefore $\widehat{G/H}/\ker \varphi = \widehat{G/H}$.
+        
+        Then, by the First isomorphism theorem, given the homomorphism $\varphi$ and natural map $\widehat{\pi}: \widehat{G/H} \onto \widehat{G/H}/\ker \varphi$, which in this case is the identity map, we know that there exist a unique homomorphism $\varphi': \widehat{G/H} \to \hat{H}$ makes the diagram in the equation \ref{eqn:6} commute.
+        \begin{equation}\label{eqn:6}
+            \xymatrix@C=3pc@R=4pc{
+                \widehat{G/H}\ar@{->>}[d]_{\pi = id}\ar[r]^{\varphi}&\hat{G}\\
+                \widehat{G/H} \cong \widehat{G/H}/\ker \varphi \ar@{-->}[ur]^{\varphi'}&
+            }
+        \end{equation}
+        In particular, $\widehat{G/H}/\ker \varphi \cong \widehat{G/H} \cong \im \varphi$. because $\im \varphi \leq \hat{G}$ and $G \cong \hat{G}$ and $G/H \cong \widehat{G/H}$, then $G/H$ is isomorphic to a subgroup of $G$.
+    \end{proof}
+    
+    If we omit the word ``abelian", then, we have the counterexample of $G = Q_8$ and $H = \{1,-1\}$. Then, $G/H = \{H, iH, jH, KH\} \cong V_4$. However, none of subgroups of $Q_8$ of order $4$ is isomorphic to $V_4$ (all of them are isomorphic to $\mathbb{Z}/4\mathbb{Z}$).
+    
+    If we omit the word ``finite", we have the counterexample of $G = \mathbb{R}$ and $H = \mathbb{Z}$. Then, assume by contradiction that $\exists N \leq G$ such that $G/H \cong N$. Then, by the First Isomorphism Theorem, this gives us an onto map $\varphi: G \onto N$ and $\ker \varphi = H$. Then $\varphi(3) = 0 = \varphi(2+0.5+0.5) = \varphi(2) + \varphi(0.5) + \varphi(0.5) = 2\varphi(0.5)$, which means that $\varphi(0.5) = 0 \Rightarrow 0.5 \in \ker \varphi = \mathbb{Z}$. This is a contradiction. Hence, no such $N$ exists.
+\end{answer}

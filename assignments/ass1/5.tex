@@ -1,0 +1,30 @@
+\section{Question 5}
+
+\begin{question}
+    Let $G$ be a group. Prove that the map from $G$ to itself defined by $g \mapsto g^2$ is a homomorphism if and only if $G$ is abelian.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Define the map
+        \begin{equation}
+            \begin{aligned}
+                f: \; G &\to G\\
+                g &\mapsto g^2
+            \end{aligned}
+        \end{equation}
+        First, suppose, $G$ is abelian, and let $g_1,g_2\in G$. then,
+        \begin{equation}
+            \begin{aligned}
+                f(g_1g_2) &= (g_1g_2)^2\\
+                &= g_1g_2g_1g_2\\
+                &= g_1g_1g_2g_2 \text{ (since $G$ is abelian)}\\
+                &= g_1^2g_2^2\\
+                &= f(g_1)f(g_2)
+            \end{aligned}
+        \end{equation}
+        This shows that $f$ is a homomorphism.
+        
+        To prove the converse, we suppose $f$ to be a homomorphism. Then, we must have $f(g_1g_2) = f(g_1)f(g_2)$ for any $g_1,g_2 \in G$. Therefore, $g_1g_2g_1g_2=g_1g_1g_2g_2$. Because $G$ is closed under inverses, then left-multiplying $g_1^{-1}$ and right-multiplying $g_2^{-1}$ on both sides of the equation, we have $g_2g_1=g_1g_2$. Since we pick $g_1,g_2$ arbitrarily, $G$ is abelian.
+    \end{proof}
+\end{answer}

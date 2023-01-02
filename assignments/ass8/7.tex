@@ -1,0 +1,56 @@
+\section{Question 7}
+
+
+\subsection{Part a}
+
+\begin{question}
+    If $N$ is a submodule of $M$, the annihilator of $N$ in $R$ is defined to be $\{r \in R \mid r n=0 \forall n \in N\}$. Prove that the annihilator of $N$ in $R$ is a (2-sided) ideal of $R$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $Ann_R(N) = \{m \in M \mid a m=0 \forall a \in I\}$. $0 \in Ann_{R}(N)$, since $0 \cdot n = 0$ for all $n \in N$. Let $p,q \in Ann_R(N)$, then $pn = qn = 0$ for all $n \in N$, so that $pn - qn = (p - q)n = 0$ for all $n \in N$, which means $p-q \in Ann_R(N)$. This shows $Ann_{R}(N)$ is an additive subgroup of $R$.
+        
+        Let $r \in R$ and $p \in Ann_R(N)$. We know that $pn = 0\, \forall n \in N$. Then $(rp)n = r(pn) = r\cdot 0 = 0$ for all $n \in N$ and $(pr)n = p(rn) = 0$ for all $n \in N$ since $RN \subseteq N \Rightarrow rn \in N$ by the definition of submodule. This shows that the absorption property is satisfied.
+        
+        Hence, $Ann_R(N)$ is a ($2$-sided) ideal of $R$.
+    \end{proof}
+\end{answer}
+
+\subsection{Part b}
+
+\begin{question}
+    If $I$ is a right ideal of $R$, the annihilator of $I$ in $M$ is defined to be $\{m \in M \mid a m=0 \forall a \in I\}$. Prove that the annihilator of $I$ in $M$ is a submodule of $M$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $Ann_M(I) = \{m \in M \mid a m=0 \forall a \in I\}$. $0 \in Ann_{M}(I)$, since $a0 = 0$ for all $a \in I$. Let $p,q \in Ann_M(I)$, then $ap = aq = 0$ for all $a \in I$, so that $ap - aq = a(p-q) = 0$ for all $a \in I$, which means $p-q \in Ann_{M}(I)$. This shows $Ann_M(I)$ is an additive subgroup of $M$.
+        
+        Let $r \in R$ and $m \in Ann_M{I}$. Then, $am = 0$ for all $a \in I$, then, since $ar \in I$ for all $a \in I$ because $I$ is a right ideal of $R$, we have $arm = 0$ for all $a$ by the definition of Annihilator. Hence, $a(rm) = 0$ for all $a \in I$ and this means $rm \in Ann_M(I)$. Because we pick $r$ and $m$ arbitrarily, $R\,Ann_M(I) \subseteq Ann_M(I)$. Then, by definition, $Ann_M(I)$ is a submodule of $M$.
+    \end{proof}
+\end{answer}
+
+\subsection{Part c}
+
+\begin{question}
+    If $N$ is a submodule of $M$ and $I$ is its annihilator in $R$, show that the annihilator of $I$ in $M$ contains $N$. Give an example where this annihilator does not equal $N$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $t \in N$, then since $I = Ann_R(N)$, then $\forall\, a \in I, \forall \, n \in N$, we have $an = 0$. Then since $t \in N$, $at = 0$ for all $a \in I$. Because $t \in N \subseteq M$, we know that $t \in Ann_M(I)$. Therefore, $N \subseteq Ann_M(I)$.
+    \end{proof}
+\end{answer}
+
+\subsection{Part d}
+
+\begin{question}
+    If $I$ is a right ideal of $R$ and $N$ is its annihilator in $M$, show that the annihilator of $N$ in $R$ contains $I$. Give an example where this annihilator does not equal $I$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $r \in I$, then since $N = Ann_M(I)$, then $\forall\, a \in I, \forall \, n \in N$, we have $an = 0$. then, since $r \in I$, then $\forall \, n \in N, an = 0$. Because $r \in I \in R$, we know that $t \in Ann_R(N)$. Therefore, $I \subset Ann_R(N)$.
+    \end{proof}
+\end{answer}

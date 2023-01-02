@@ -1,0 +1,18 @@
+\section{Question 8}
+
+\begin{question}
+    If a finite group $G$ has exactly $n$ elements of order $p$, where $p$ is a prime number, prove that either $n=0$ or $p$ divides $n+1$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $A = \{(x_1,\cdots,x_p) \mid x_i \in G, x_1\cdots x_p = e\}$. The group $\mathbb{Z}/p\mathbb{Z}$ acts on $A$ by cyclic right shift. Then, the orbits of elements in $A$ are either size $1$ or size $p$. For those elements of orbit size $1$ in $A$ they are in the form of $(x,x,\cdots,x)$ or $(e,e,\cdots,e)$ for some $x^p = e$. Because there are exactly $n$ elements of order $p$ in $G$, so that there are exactly $n+1$ elements in $A$ such that the orbit size is $1$. Then, we have
+        \begin{equation}
+            \begin{aligned}
+                \lvert A \rvert &= \#\text{elts of orbit size }1 + \#\text{elts of orbit size }p \cdot p\\
+                \lvert G \rvert^{p-1} &= n+1 + \#\text{elts of orbit size }p \cdot p\\
+            \end{aligned}
+        \end{equation}
+        Then, $\lvert G \rvert^{p-1} \equiv n+1 \;(\text{mod }p)$. Also, since $G$ has exactly $n$ elements of order $p$, then we know $p\mid \lvert G \rvert$ or $n = 0$. Hence, $n = 0$ or $p \mid n+1$.
+    \end{proof}
+\end{answer}

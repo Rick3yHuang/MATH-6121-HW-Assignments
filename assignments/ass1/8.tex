@@ -1,0 +1,21 @@
+\section{Question 8}
+
+\begin{question}
+    If $H, K$ are subgroups of finite index in the (possibly infinite) group $G$ with $|G: H|=m$ and $|G: K|=n$, prove that
+    \begin{equation}
+        \lcm(m, n) \leq|G: H \cap K| \leq m n .        
+    \end{equation}
+    Deduce that if $\gcd(m, n)=1$ then $|G: H \cap K|=|G: H| \cdot|G: K|$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $a \in gH\cap K$, then we know that there are $h \in H$ and $k \in K$ such that $a = gh = gk$, which implies $a \in gK$ and $a \in gH$. Thus, $a \in gH \cap gK$, and therefore $gH\cap K \subseteq gH\cap gK$ Then, the number of left cosets of $H\cap K$ should be smaller or equal to the number of intersections between the left cosets of $H$ and the left cosets of $K$. Therefore, $[H:H\cap K] \leq [G:H]\cdot[G:K]=mn$.
+        
+        Since, the index is multiplicative, then $[G:H\cap K] = [G:H][H:H\cap K] = [G:K][K:h\cap K]$ since $H\cap K \leq H$ and $H\cap K \leq K$. Thus, $[G:H \cap K] = m[H:H\cap K] = n[K:H\cap K]$, so that $m \lvert [G:H\cap K]$ and $n \lvert [G:H\cap K]$. Hence, $\lcm(m,n)\lvert [G:H\cap K]$, so that $\lcm(m,n)\leq [G:H\cap K]$
+        
+        Therefore, we have $\lcm(m,n) \leq [G:H\cap K] \leq mn$.
+        
+        Finally, when $\gcd(m,n)=1$, $\lcm(m,n) = \tfrac{mn}{\gcd(m,n)} = mn$. Then, we would have $mn \leq [G:H\cap K] \leq mn$, i.e $[G:H\cap K] = mn = [G:H]\cdot[G:K]$.
+    \end{proof}
+\end{answer}

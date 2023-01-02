@@ -1,0 +1,23 @@
+\section{Question 5}
+
+\subsection{Part a}
+
+\begin{question}
+    Show that $\mathbf{Z}[\sqrt{-2}]$ is a Euclidean domain, hence also a PID and a UFD.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        We claim we could use $\delta(x) = \lvert x \rvert^2$ for all $x \in \mathbb{Z}[\sqrt{-2}]$ to show $R = \mathbb{Z}[\sqrt{-2}]$ is a Euclidean domain. Given, $a,b \in R$ with $b \neq 0$. Choose $q \in \mathbb{Z}$ such that $\lvert a - bq \rvert$ is closest to $0$. Then $\lvert a - bq \rvert^2 \leq \tfrac{\sqrt{3}}{2} = 0.86602540378 < 1$ by the visualization of the process of finding $q$, since every points in $R$ in the complex coordinates have distance $\sqrt{2}$ in the imaginary coordinates and have distance $1$ in the real coordinates. Therefore, $\delta(a-bq) < 1 \leq \delta(b)$. Hence, $R$ is a Euclidean domain, hence a P.I.D. and a U.F.D..
+    \end{proof}    
+\end{answer}
+
+\subsection{Part b}
+
+\begin{question}
+    Use part (a) to find all integer solutions to the Diophantine equation $x^3-y^2=2$.
+\end{question}
+
+\begin{answer}
+    $(x,y) = (3,5)$
+\end{answer}

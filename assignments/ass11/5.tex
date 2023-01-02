@@ -1,0 +1,11 @@
+\section{Question 5}
+
+\begin{question}
+    Prove that there is no commutative ring with identity whose additive group is isomorphic to $\mathbb{Q} / \mathbb{Z}$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Assume by contradiction that there is a commutative ring with identity $R$ such that $(R,+) \cong (\mathbb{Q}/\mathbb{Z}, +)$. Then there exists a group isomorphism $\phi: \mathbb{Q}/\mathbb{Z} \to R$. We know that $0 \in R$ will be sent to $0 \in \mathbb{Q}/\mathbb{Z}$. Since $\phi$ is an isomorphism, we can assume $q = \tfrac{c}{d} \in \mathbb{Q}/\mathbb{Z}$ for $c,d \in \mathbb{Z}$ nonzero and $\gcd(c,d)=1$, such that $\phi(q) = 1$. Then $1$ will have finite additive order since $d \cdot q = d \cdot \tfrac{c}{d} = 0$ and there is no integer smaller than $d$ having this property, i.e. $d \cdot 1 = 0$. Let $a \in R$ be such that $f\left(\tfrac{1}{m}\right) = a$ where $m > d$. Then, we know that $a$ has additive order $m$. However, $d \cdot a = d \cdot (1 \cdot a) = d \cdot a$ means that $a$ has additive order at most $d$. This is a contradiction since $m > d$. Thus, there is no commutative ring with identity whose additive group is isomorphic to $\mathbb{Q}/\mathbb{Z}$.
+    \end{proof}
+\end{answer}

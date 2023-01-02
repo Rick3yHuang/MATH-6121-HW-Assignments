@@ -1,0 +1,26 @@
+\section{Question 9}
+
+\begin{question}
+    Determine the number of possible Jordan canonical forms over $\mathbb{C}$ for a linear transformation with characteristic polynomial $x^2\left(x^2-1\right)\left(x^2+1\right)^2$.
+\end{question}
+
+\begin{answer}
+    In order to find all possible Jordan canonical forms, we should look at the elementary divisors, because the elementary Jordan blacks can be uniquely determined by the elementary divisors. Since this linear transformation is over $\mathbb{C}$, we can factorize the characteristic polynomial to:
+    \begin{equation}
+        P(x) = x^2(x+1)(x-1)(x+i)^2(x-i)^2
+    \end{equation}
+    $x+1$ and $x-1$ must be two elementary divisors. However, we could have $x,x$ or $x^2$ to be our elementary divisors. Similar, we could have $x+i,x+i$ or $(x+i)^2$ and $x-i,x-i$ or $(x-i)^2$ to be our elementary divisors. Hence, there are $2\cdot 1 \cdot 1 \cdot 2 \cdot 2 = 8$ possible sets of elementary divisors. Explicitly, they will be:
+    \begin{equation}
+        \begin{aligned}
+            &\{x^2,x+1,x-1,(x+i)^2,(x-i)^2\}\\
+            &\{x,x,x+1,x-1,(x+i)^2,(x-i)^2\}\\
+            &\{x^2,x+1,x-1,x+i,x+i,(x-i)^2\}\\
+            &\{x,x,x+1,x-1,x+i,x+i,(x-i)^2\}\\
+            &\{x^2,x+1,x-1,(x+i)^2,x-i,x-i\}\\
+            &\{x,x,x+1,x-1,(x+i)^2,x-i,x-i\}\\
+            &\{x^2,x+1,x-1,x+i,x+i,x-i,x-i\}\\
+            &\{x,x,x+1,x-1,x+i,x+i,x-i,x-i\}
+        \end{aligned}
+    \end{equation}
+    Each one will be corresponding to a unique Jordan canonical form over $\mathbb{C}$ up to permuting the elementary Jordan blacks.
+\end{answer}

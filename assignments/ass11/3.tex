@@ -1,0 +1,35 @@
+\section{Question 3}
+
+\begin{question}
+    Let $p$ be a prime number and let $P$ be a Sylow $p$-subgroup of the finite group $G$. Let $H$ be a subgroup of $G$. Prove that there exists an element $g \in G$ such that $g P g^{-1} \cap H$ is a Sylow $p$-subgroup of $H$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $\lvert G \rvert = mp^k$ for some $m,k \in \mathbb{Z}^+$ and $\gcd (m,p) = 1$ and since $H \subseteq K$ is a subgroup, we could assume $\lvert H \rvert = np^l$ for some $n,l \in \mathbb{Z}^+$, $n \mid m$, $l \leq k$, and $\gcd(n,p) = 1$. Because $P \in \Syl_p(G)$, $\lvert P \rvert = p^k$. Hence, by the Lagrange Theorem, since $G$ is finite, we know that $[G:P] = \tfrac{\lvert G \rvert}{\lvert P \rvert} = m$. Let $G/P$ denotes the set of left cosets. Now, let $G$ acts on $G/P$ by left multiplication. Suppose $g_1 \in G_{(g_2/P)}$ for some $g_1,g_2 \in G$, then 
+        \begin{equation}
+            \begin{aligned}
+                g_1.g_2P = g_1g_2P = g_2P &\Leftrightarrow g_2^{-1}g_1g_2P = P \Leftrightarrow (g_2^{-1}g_1g_2).P = P\\
+                &\Leftrightarrow g_2^{-1}g_1g_2 \in G_P \Leftrightarrow g_2^{-1}g_1g_2 \in P \Leftrightarrow g_1 \in g_2Pg_2^{-1},
+            \end{aligned}
+        \end{equation}
+        since notice that $G_p = \{g \in G \mid gP = P\} = P$. This means $G_{(g_2P)} \subseteq g_2Pg_2^{-1}$.
+        
+        Also, since $(g_2qg_2^{-1}).g_2P = g_2q(g_2^{-1}g_2)P = g_2qP = g_2P$ for all $q \in P$, we know that $g_2qg_2^{-1} \in G_{(g_2P)}$ for all $q \in P$. That is $G_{(g_2P)} \supseteq g_2Pg_2^{-1}$, and therefore $G_{(g_2P)} =  g_2Pg_2^{-1}$. Hence, for all $g \in G$, we have $G_{(gp)} = gPg^{-1}$.
+        
+        If we restrict the action to $H$ acting on $G/P$, we know that $H_{(gP)} = gPg^{-1} \cap H$ for all $g \in G$.
+        
+        %We could then choose $g \in G$ such that $gPg^{-1} \in \Syl_p(G)$. We know such $g$ exists in $G$ since if $n_p = 1$, then by the corollary of the Sylow Theorem \#3, we know that $P \triangleleft G$ so that $gPg^{-1} = P \in \Syl_p(G)$ for all $g \in G$. Otherwise, if $n_p > 1$, then we could find another $P' \in \Syl_p(G)$ so that there exists $g \in G$ such that $P' = gPg^{-1}$ by the Sylow Theorem \#2. 
+        
+        %Using this $g$ we pick, we know that $\lvert gPg^{-1} \rvert = p^l$. 
+        Because $H_{(gP)} = gPg^{-1} \cap H \leqslant gPg^{-1} \leqslant P$, then $\lvert gPg^{-1} \cap H \rvert \mid \lvert P \rvert = p^k$ by the Lagrange Theorem. We could assume $\lvert H_{(gP)} \rvert = p^{l'}$ Now, by the Orbit-Stabilizer Theorem, we have:
+        \begin{equation}
+            \lvert H.(gP) \rvert = \tfrac{\lvert H \rvert}{\lvert H_{(gP)} \rvert} = \tfrac{np^l}{p^{l'}} = np^{(l-l')}, \text{ for all $g \in G$}
+        \end{equation}
+        Notice that $l' \leq l \Leftrightarrow l - l' \geq 0$ since $np^{(l-l')} \in \mathbb{Z}$ and $\gcd(n,p) = 1$. Then, assume $l - l' > 0$ for all $g \in G$, we know $p \mid \lvert H.(gP) \rvert$ for all $g \in G$. Then, we can derive the following equation from the class equation:
+        \begin{equation}
+            \lvert G/P \rvert = \sum_{gP \in A} [H:H_{(gP)}] = \sum_{gP \in A} \lvert H.(gP)\rvert \text{ (by the Orbit-Stabilizer Theorem)},
+        \end{equation}
+        where $A \subseteq G/P$ has exactly one element from each orbit. Then, since $p \mid \sum_{gP \in A} \lvert H.(gP)\rvert$, we have $m \equiv 0 \,(\mod p)$. This is a contradiction since $\gcd(m,p) = 1$ by assumption. Hence, $l = l'$ for some $g \in G$. That means, for this $g$, we have $\lvert gPg^{-1}\cap H \rvert = p^l$. Thus, $gPg^{-1} \cap H \in \Syl_p(H)$ for some $g \in G$.
+    \end{proof}
+\end{answer}

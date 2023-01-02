@@ -1,0 +1,37 @@
+\section{Question 2}
+
+\subsection{Part a}
+
+\begin{question}
+    Prove that a finite group $G$ is solvable (meaning there is a chain of subgroups $\{e\}=G_0 \triangleleft G_1 \triangleleft \cdots G_t=G$ with $G_{i+1} / G_i$ abelian for all $\left.i\right)$ iff its composition factors are all cyclic of prime order.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $G$ be a solvable. Then there is normal series of $G$:
+        \begin{equation}
+            G_1 \triangleleft G_2 \triangleleft \cdots \triangleleft G_n = G,
+        \end{equation}
+        such that $G_{i+1}/G_1$ abelian for all $i \in \{1,2,\cdots,n-1\}$. 
+        
+        If all these $G_{i+1}/G_i$ are simple, then we have a composition series. Therefore, each composition factors are simple and abelian, therefore cycle of prime order, because otherwise, by the Sylow Theorem \#3, we know that there must exist a normal Sylow $p$-subgroup of it for some $p$ divides the order of the composition factor.
+        
+        If there exist some $j$ such that $G_{j+1}/G_j$ is not simple. Then, $G_{j+1}/G_j$ would have a normal subgroup in the form of $K/G_j$ such that $K$ is a normal subgroup of $G_{j+1}$ in between $G_{j+1}$ and $G_j$. Next, by the Fourth Isomorphic Theorem, we have:
+        \begin{equation}
+            K/G_j \triangleleft G_{j+1}/G_j\;\text{, and }\; (G_{j+1}/G_j)/(K/G_j) = G_{j+1}/K.
+        \end{equation}
+        Since we know $G_{j+1}/G_j$ is abelian, then the normal subgroup $K/G_j$ of it is also abelian, and the quotient group $G_{j+1}/K$ is also abelian. If now $G_{j+1}/K$ and $K/G_{j}$ are simple. Then, we have a composition series with simple abelian composition factors. That means all composition factors are cyclic of prime order.
+        
+        If we still don't have a composition series after we fit $K$, we could again fit in some more intermediate normal subgroups of $G$ into the normal series from the solvable condition. Then, by induction, we would have a composition series with composition factors are all cyclic of prime orders.
+    \end{proof}
+\end{answer}
+
+\subsection{Part b}
+
+\begin{question}
+    Prove that a subgroup or quotient group of a solvable group is again solvable. (Conversely, on p.105 of the textbook it is shown that if $G$ is a group, $N \triangleleft G$, and both $N$ and $G / N$ are solvable, then $G$ is also solvable.)
+\end{question}
+
+\begin{answer}
+    
+\end{answer}

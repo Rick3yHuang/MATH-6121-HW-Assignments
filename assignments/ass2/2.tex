@@ -1,0 +1,100 @@
+\section{Question 2}
+
+\begin{question}
+    Let $G$ be a group, and let $H$ be a subgroup of $G$.
+\end{question}
+
+\subsection{Part a}
+
+\begin{question}
+    Verify that $G$ acts by left multiplication on the left coset space $G / H$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        As describe in the question, define a function:
+        \begin{equation}
+            \begin{aligned}
+                f: G \times G/H &\to G/H\\
+                (g,kH) &\mapsto g.(kH) = gkH\\
+            \end{aligned}
+        \end{equation}
+        First we would have $\forall gH \in G/H$, we have $e_G.(gH) = e_GgH = gH$. Then, let $gH \in G/H$ and $g_1,g_2 \in G$, we have 
+        \begin{equation}
+            \begin{aligned}
+                g_1.(g_2.(gH)) &= g_1.(g_2gH)\\
+                &= g_1(g_2gH)\\
+                &= g_1g_2gH\\
+                &= (g_1g_2)(gH)\\
+                &= (g_1g_2).(gH)
+            \end{aligned}
+        \end{equation}
+        Thus, we verified that $f$ is a group action.
+    \end{proof}
+\end{answer}
+
+\subsection{Part b}
+
+\begin{question}
+    Show that this action is transitive, and compute the stabilizer of the trivial coset $H$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        There is only one orbit for every element in $G/H$ which is the entire $G/H$, since for any two elements $g_1H, g_2H \in G/H$, we would have $g_2g_1^{-1} \in G$ such that $g_2g_1^{-1}.(g_1H) = g_2g_1^{-1}g_1H = g_2H$ that sends $g_1H$ to $g_2H$. Therefore. the action is transitive.
+    \end{proof}
+    The stabilizer of the trivial coset $H$ is $G_H = \{g \in G \lvert gH = H\} = \{g \in G \lvert g \in H\} = H$.
+\end{answer}
+
+\subsection{Part c}
+
+\begin{question}
+    Prove that the kernel $K$ of this action is contained in $H$, and more generally that it is the largest normal subgroup of $G$ contained in $H$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        let $k \in K$, then $k.(gH) = gH, \; \forall gH \in G/H$. In particular, when $gH = H$, we have $k.H = kH = H$. Thus, $k \in H$. Hence, $K \subseteq H$.
+        
+        Next, we have
+        \begin{equation}
+            \begin{aligned}
+                (xkx^{-1}).(gh) &= x.(k.(x^{-1}.(gH))),\;\forall gH \in G/H,\;\forall x \in G\\
+                &= x.(x^{-1}.(gH)),\;\forall gH \in G/H,\;\forall x \in G\\
+                &= (xx^{-1}).(gH),\;\forall gH \in G/H,\;\forall x \in G\\
+                &= e_G.(gH),\;\forall gH \in G/H,\;\forall x \in G\\
+                &= gH,\;\forall gH \in G/H,\;\forall x \in G\\
+            \end{aligned}
+        \end{equation}
+        Therefore, $xkx^{-1} \in K,\;\forall x \in G$. This means, $xKx^{-1} \subseteq K,\;\forall x \in G$, and because $e_G \in K$, $K \trianglelefteq G$.
+        
+        Finally, let $N \subseteq H$ such that $N \trianglelefteq G$. Let $n \in N$, we have
+        \begin{equation}
+            \begin{aligned}
+                n.(gH) &= ngH\\
+                &= gn'H \text{ by $N$ is normal in $G$ for some $n' \in N$ }\\
+                &= gH \text{ by $n' \in N \subseteq H$}
+            \end{aligned}
+        \end{equation}
+        Thus, $n \in K$. Therefore $N \subseteq K$. Hence, $K$ is the largest normal subgroup of $G$ in $H$.
+    \end{proof}
+\end{answer}
+
+\subsection{Part d}
+
+\begin{question}
+    If $G$ is a group of order 140 and $H$ is a subgroup of $G$ of order 35 , prove that $H$ is normal in $G$. [\textbf{Hint}: Use part (c) and consider the permutation representation $\phi: G / K \rightarrow S_4$ associated to the action of $G$ on $G / H .]$
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        From the action of $G$ on $G/H$, we have the permutation representation $\varphi: G \to S_4$, since $\lvert G/H \rvert = \tfrac{140}{35} = 4$. Then, by define the homomorphism $\pi: G \to G/K$, we have the following diagram \ref{eqn:2}:
+        \begin{equation}\label{eqn:2}
+        \xymatrix@C=3pc@R=4pc{
+            G\ar[d]_{\pi}\ar@{->>}[r]^{\varphi}&S_4\\
+            G/K\ar[ur]_{\phi}&
+        }
+        \end{equation}
+        and there exist a homomorphism $\phi: G/K \to S_4$ that make the diagram commutes. Also, since $K$ is the kernel of $G$, by the First Isomorphism Theorem, we know that $G/K \equiv \im \varphi$. Therefore, $\lvert \im \varphi \rvert = \lvert G/K \rvert$. Since $K \leqslant H$ and $\lvert H \rvert = 35$, by Lagrange Theorem, we know that $\lvert K \rvert = 1, 5, 7, $ or $35$. Then again by the First Isomorphism Theorem, $\lvert \im \varphi \rvert = \tfrac{140}{1}, \tfrac{140}{5}, \tfrac{140}{7},$ or $\tfrac{140}{35} = 140, 28, 20, $ or $4$. Furthermore, since $\im \varphi \leqslant S_4$, we know $\lvert \im \varphi \rvert \mid \lvert S_4 \rvert = 24$ by Lagrange Theorem. Then, since $140 \nmid 24, 28 \nmid 24, 20 \nmid 24, $ and $4 \lvert 24$, the only possible $\lvert \im \varphi \rvert = 4 = \lvert G/K \rvert$. Thus, $\lvert K \rvert = \tfrac{\left\lvert G \right \rvert}{\left\lvert G/H \right\rvert} = \tfrac{140}{4} = 35$. Since $K \leqslant H$ and $\lvert H \rvert = 35$, $K = H$. B Part c of this problem, we know that $K \trianglelefteq G$, i.e. $H \trianglelefteq G$.
+    \end{proof}
+\end{answer}

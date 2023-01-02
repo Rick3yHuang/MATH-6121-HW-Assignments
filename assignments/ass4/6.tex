@@ -1,0 +1,71 @@
+\section{Question 6}
+
+\begin{question}
+    Let $G$ be the group consisting of all infinite sequences $\left(a_1, a_2, \ldots\right)$ with $a_n \in \mathbf{Z} / 4 \mathbf{Z}$ for all $n \geq 1$, and let $H=G \times(\mathbf{Z} / 2 \mathbf{Z})$. Prove that $G$ is isomorphic to a subgroup of $H$ and $H$ is isomorphic to a subgroup of $G$ but $G$ and $H$ are not isomorphic.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $G_1 = \{(a_1,a_2,\cdots) \mid a_1 \in \{0,2\}, a_2,a_3,\cdots \in \mathbb{Z}/4\mathbb{Z}\}$. Define a map:
+        \begin{equation}
+            \begin{aligned}
+                \varphi: H &\to G_1\\
+                ((a_1,a_2,\cdots),x) &\mapsto (2x,a_1,a_2,\cdots)\\
+            \end{aligned}
+        \end{equation}
+        We will show that $\varphi$ is an isomorphism.
+        
+        First, let $((a_1,a_2,\cdots),x_1), ((b_1,b_2,\cdots),x_2) \in H$, if $\varphi(((a_1,a_2,\cdots),x_1)) \neq \varphi(((b_1,b_2,\cdots),x_2))$, then $((a_1,a_2,\cdots),x_1)\neq(b_1,b_2,\cdots),x_2)$. Indeed, since if $\varphi((a_1,a_2,\cdots),x_1)) = (2x_1,a_1,a_2,\cdots) \neq (2x_2,b_1,b_2,\cdots) = \varphi(((b_1,b_2,\cdots),x_2))$, then either $2x_1\neq 2x_2$ or $a_i \neq b_i$ will make $((a_1,a_2,\cdots),x_1) \neq ((b_1,b_2,\cdots),x_2)$. Therefor $\varphi$ is well-defined.
+        
+        Next, since
+        \begin{equation}
+            \begin{aligned}
+                \varphi(((a_1,a_2,\cdots),x_1)+((b_1,b_2,\cdots),x_2) &= \varphi(((a_1+b_1,a_2+b_2,\cdots),x_1+x_2))\\
+                &= (2x_1+2x_2,a_1+b_1,a_2+b_2,\cdots)\\
+                &= (2x_1,a_1,a_2\cdots) + (2x_2,b_1,b_2,\cdots)\\
+                &= \varphi(((a_1,a_2,\cdots),x_1)) + \varphi(((b_1,b_2,\cdots),x_2)),
+            \end{aligned}
+        \end{equation}
+        $\varphi$ is a homomorphism.
+        
+        Then, since the map defines
+        \begin{equation}
+            \begin{aligned}
+                    \varphi: H &\to G_1\\
+                    ((a_1,a_2,\cdots),1) &\mapsto (2,a_1,a_2,\cdots)\\
+                    ((a_1,a_2,\cdots),0) &\mapsto (0,a_1,a_2,\cdots),
+            \end{aligned}
+        \end{equation}
+        If we follow this map strictly, then for every element in $G_1$, we could find a element in $H$ such that it maps onto the chosen element. Hence, $\varphi$ is surjective.
+        
+        Finally, let $((a_1,a_2,\cdots),x_1), ((b_1,b_2,\cdots),x_2) \in H$, such that $((a_1,a_2,\cdots),x_1)\neq(b_1,b_2,\cdots),x_2)$, then $\varphi(((a_1,a_2,\cdots),x_1)) \neq \varphi(((b_1,b_2,\cdots),x_2))$. Indeed, since $\varphi((a_1,a_2,\cdots),x_1)) = (2x_1,a_1,a_2,\cdots)$ and $\varphi(((b_1,b_2,\cdots),x_2)) = (2x_2,b_1,b_2,\cdots)$. Then either $2x_1\neq 2x_2$ or $a_i \neq b_i$ will make $(2x_1,a_1,a_2,\cdots) \neq (2x_2,b_1,b_2,\cdots$. Therefor $\varphi$ is injective.
+        
+        Now we know that $\varphi$ is an isomorphism. Hence $H \cong G_1$.
+        
+        Let $(x_1,a_1,a_2,\cdots),(x_2,b_1,b_2,\cdots) \in G_1$, then $(x_1,a_1,a_2,\cdots)+(x_2,b_1,b_2,\cdots)^{-1} = (x_1+x_2,a_1b_2^{-1},a_2b_2^{-1},\cdots)$, since $\mathbb{Z}/4\mathbb{Z}$ is a group, then $a_ib_i^{-1} \in \mathbb{Z}/4\mathbb{Z}$ and $x_1+x_2 \in {0,2}$, then $(x_1,a_1,a_2,\cdots)+(x_2,b_1,b_2,\cdots)^{-1} \in G_1$. Therefore $H \cong G_1$ is a subgroup of $G$
+        
+        Let $H_1 = G \times \{0\}$. Define a map:
+        \begin{equation}
+            \begin{aligned}
+                \phi: G &\to H_1\\
+                (a_1,a_2,\cdots) &\mapsto ((a_1,a_2,\cdots),0)\\
+            \end{aligned}
+        \end{equation}
+        We will show that $\phi$ is an isomorphism.
+        
+        It is clear that this map is well-defined, injective and surjective, since we only adhere a $0$ to elements in $G$ tp create a tuple, so its just has the same bijection as the identity map. This is a homomorphism, since
+        \begin{equation}
+            \begin{aligned}
+                \phi((a_1,a_2,\cdots) + (b_1,b_2,\cdots)) &= \phi((a_1+b_1,a_2+b_2,\cdots))\\
+                &= ((a_1+b_1,a_2+b_2,\cdots),0)\\
+                &= ((a_1,a_2,\cdots),0) + ((b_1,b_2,\cdots),0)\\
+                &= \phi((a_1,a_2,\cdots)) + \phi((b_1,b_2,\cdots))
+            \end{aligned}
+        \end{equation}
+        Furthermore, let $((a_1,a_2,\cdots),0), ((b_1,b_2,\cdots),0) \in H_1$, then $((a_1,a_2,\cdots),0) + ((b_1,b_2,\cdots),0)^{-1} = ((a_1,a_2,\cdots),0) + ((b_1^{-1},b_2^{-1},\cdots),0) = ((a_1+b_1^{-1},a_2+b_2^{-1},\cdots),0) \in H_1$, because $a_i+b_i^{-1} \in \mathbb{Z}/4\mathbb{Z}$ by closure of operation and inverses.
+        
+        Thus, $G \cong H_1$ is a subgroup of $H$.
+        
+        Eventually, since $(1,c_1,c_2,\cdots) \notin G_1$ and $(1,c_1,c_2,\cdots) \in G$, then $G \neq G_1$. However, $H \cong G_1$, then $G \neq H$ 
+    \end{proof} 
+\end{answer}

@@ -1,0 +1,18 @@
+\section{Question 1}
+
+\begin{question}
+    Prove that a group $G$ of order $24$ cannot be simple. [Hint: Consider the action of $G$ on the set of 2-Sylow subgroups of $G$ by conjugation, noting that the kernel of this action is a normal subgroup of $G$.]
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Assume by contradiction that $G$ is simple. Then by Sylow Theorem \# 3, we have $n_2 \mid 24$, and $n \equiv 1 \text{ (mod 2)}$ so $n_2 = 1 \text{ or } 3$. Then, $n_2 = 3$, since otherwise $n_2 = 1$ implies that there is a normal Sylow $2$-subgroup of $G$ which contradict the assumption that $G$ is simple. Let $G$ acting on $Syl_2(G)$ by conjugation. This is a group action because $\forall P \in Syl_2(G),\;e.P = P$ and $\forall g_1,g_2 \in G,\;(g_1g_2).P = g_1g_2Pg_2^{-1}g_1^{-1} = g_1(g_2Pg_2^{-1})g_1^{-1} = g_1(g_2.P)g_1^{-1} = g_1.(g_2.P)$. Therefore, this group action defines a group homomorophism:
+        \begin{equation}
+            \begin{aligned}
+                \varphi: G &\to Aut(Syl_2(G)) = S_3\\
+                g &\mapsto \sigma_g
+            \end{aligned}
+        \end{equation}
+        This homomorphism must be injective, since otherwise $\varphi$ would have a non-trivial kernel $K$ and $K \triangleleft G$, which means $G$ is not simple then. Hence, $\lvert \im \varphi \rvert = \lvert G \rvert = 24$ need to divide $\lvert S_3 \rvert = 6$. This is a contradiction. Thus, $G$ cannot be simple.
+    \end{proof}
+\end{answer}

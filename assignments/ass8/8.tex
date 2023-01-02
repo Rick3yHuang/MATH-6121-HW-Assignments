@@ -1,0 +1,18 @@
+\section{Question 8}
+
+\begin{question}
+    An $R$-module $M$ is called simple if $M \neq 0$ and $0, M$ are the only submodules of $M$. Prove that if $R$ is commutative, then $M$ is simple iff $M \cong R / I$ as $R$-modules for some maximal ideal $I$ of $R$.
+\end{question}
+
+\begin{answer}
+    ($\Rightarrow$): Let $m^{\star} \in M$ and $m^{\star} \neq 0$. Define a nonzero map:
+    \begin{equation}
+        \begin{aligned}
+            \varphi_{m^{\star}}: R &\to M\\
+            r &\mapsto rm^{\star}
+        \end{aligned}
+    \end{equation}
+    This is an $R$-module homomorphism, since if we let $r_1,r_2 \in R$, then first $\varphi_{m^{\star}}(r_1+r_2) = (r_1 + r_2)m^{\star} = r_1m^{\star} + r_2m^{\star} = \varphi_{m^{\star}}(r_1) + \varphi_{m^{\star}}(r_2)$ and also $r_1\varphi_{m^{\star}}(r_2) = r_1(r_2m^{\star}) = (r_1r_2)m^{star} = \varphi_{m^{\star}}(r_1r_2)$, this shows $\varphi_{m^{\star}}$ is an $R$-module homomorphism. Then, the kernel of $\varphi_{m^{\star}}$ is $\ker \varphi_{m^{\star}} = \{r \in R \mid rm^{\star} = 0\}$. Now by the First Homomorphism Theorem, we have $R/\ker \varphi_{m^{\star}} \cong \im \varphi_{m^{\star}}$. Also, since $\im \varphi_{m^{\star}}$ is a submodule of $M$, then $\im \varphi_{m^{\star}} = M$ or $0$. However $\im \varphi_{m^{\star}}$ cannot be $0$, since otherwise, $\varphi_{m^{\star}}$ would be a zero map this is contradiction since $R$ is the action on $M$ hence $R \neq 0$. Thus, let $I = \ker \varphi_{m^{\star}}$, we have $R/I \cong M$. Then, it suffice to show that $I$ is maximal. Then Assume by contradiction there exist $J \subset R$ such that $I \subset J \subset R$. Then, $J/I \subset R/I \cong M$. Then there exist an isomorphic copy $M_J$ of $J$ such that $M_J \subset M$. Also, $M_J \neq 0$ or $M$ since $J \neq I$ and $J \neq R$. This contradicts the simplicity of $M$. Hence, $I$ is maximal in $R$.
+    
+    ($\Leftarrow$): Assume $M \cong R/I$ for some maximal ideal $I$. Suppose by contradiction that there is $0 \subset M' \subset M$ as a $R$-submodule. Then, $M' \cong J/I$ for some $J \subset R$ since $M \cong R/I$. Then, by the Second Isomorphism Theorem, because $0 \subset J/I \subset R/I$, we could show that $I \subset J \subset R$. This contradicts that $I$ is maximal. Hence there is no $R$-submodule of $M$ other than $0$ and $M$. Therefore, $M$ is simple.
+\end{answer}

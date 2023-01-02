@@ -1,0 +1,67 @@
+\section{Question 4}
+
+\begin{question}
+    Let $R=\mathbf{Z}[\sqrt{-n}]$ with $n$ a squarefree integer greater than 3.
+\end{question}
+
+\subsection{Part a}
+
+\begin{question}
+    Prove that $2, \sqrt{-n}$, and $1+\sqrt{-n}$ are all irreducible in $R$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        For $2$, assume $2 = st$, then we have $\lvert 2 \rvert^2 = 4 = \lvert s \rvert^2 \lvert t \rvert^2$, we could not have $s,t$ both not in $\mathbb{Z}$, since $\lvert s \rvert^2 \geq n$ and $\lvert t \rvert^2 \geq n$, and $\lvert s \rvert^2 \lvert t \rvert^2 \geq n^2 > 9$ otherwise. WLOG, suppose $s \in \mathbb{Z}, t \notin \mathbb{Z}$, we have $\lvert t \rvert^2 > n > 3$, then the only possible $s$ and $t$ are $\lvert t \rvert^2 = 4$ and $\lvert s \rvert^2 = 1$. Then, $s = \pm 1$, i.e. $s \in R^{\times}$, which shows that $2$ is irreducible. Finally, if $s,t \in \mathbb{Z}$, then the only possible $s,t$ are $s = \pm 1$, $t = \pm 2$ or $s = \pm 2$, $t = \pm 1$, which implies $s$ or $t$ will be in $R^{\times}$. Otherwise, we would have $\lvert s \rvert^2 = \lvert t \rvert^2 = 2$, which means $\lvert s \rvert, \lvert t \rvert = \pm \sqrt{2} \notin \mathbb{Z}$. Hence, $2$ is irreducible in general.
+        
+        For $\sqrt{-n}$, assume $\sqrt{-n} = st$, then we have $\lvert \sqrt{-n} \rvert^2 = \lvert s \rvert^2 \lvert t \rvert^2 = n$. Notice, $s,t$ cannot both be in $\mathbb{Z}$, since $st = \sqrt{-n} \notin \mathbb{Z}$. Also, for the same reason as the previous part, $s,t$ cannot both not be in $\mathbb{Z}$ (in this case $\lvert s \rvert^2 \lvert t \rvert^2 \geq n^2 > n$). Hence, the only possibility is that one of $s$ and $t$ is in $\mathbb{Z}$, WLOG, we assume, $s \in \mathbb{Z}$, then $s = \pm 1$, because otherwise, we would have $\lvert s \rvert^2 \mid n$ and $\lvert s \rvert \neq 1$ which contradict the condition that $n$ is squarefree. Thus, $s \in R^{\times}$. Hence, $\sqrt{-n}$ is irreducible.
+        
+        For $1+\sqrt{-n}$, also assume $1+\sqrt{-n} = st$, then, we have $\lvert 1 + \sqrt{-n} \lvert^2 = \lvert s \rvert^2 \lvert t \rvert^2$. For the similar reasons, we could eliminate the cases of $s,t$ both in $\mathbb{Z}$ or both not in $\mathbb{Z}$. Then, WLOG, if $s \in \mathbb{Z}$, we have $\lvert s \rvert^2 = s^2$ and $\lvert t \rvert^2 = a^2 + b^2n$ for some integers $a,b$, then $s^2a^2 + s^2b^2n = 1 + n$, so that $s^2a^2 = s^2b^2 = 1$. The only possible solution is $s = a = b = \pm 1$. Thus, $s \in R^{\times}$. Hence, $1 + \sqrt{-n}$ is irreducible
+    \end{proof}
+\end{answer}
+
+\subsection{Part b}
+
+\begin{question}
+    Prove that $R$ is not a UFD. [Hint: Show that either $\sqrt{-n}$ or $1+\sqrt{-n}$ is not prime.]
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Note that $n$ and $n+1$ must have exactly one even integer and one odd integer.
+        
+        First, we assume $\sqrt{-n}^2 = -n = 2k$ for some $k \in \mathbb{Z}$. Then we would have $\sqrt{-n} \mid 2k$. However $\sqrt{-n} \nmid 2$ and $\sqrt{-n} \nmid k$. Indeed, since if $\sqrt{-n}(a + b\sqrt{-n}) = 2$, then
+        \begin{equation}
+            a\sqrt{-n} - bn = 2 \Rightarrow a = 0 \Rightarrow -bn = 2
+        \end{equation}
+        This is not possible since $b,n \in \mathbb{Z}$ and $n > 3$. Also, if $\sqrt{-n} \mid k$, we have have:
+        \begin{equation}
+            a\sqrt{-n} - bn = k \Rightarrow a = 0 \Rightarrow -bn = k \Rightarrow b2k = k \Rightarrow b = \tfrac{1}{2}
+        \end{equation}
+        This contradicts that $b \in \mathbb{Z}$. Thus, $\sqrt{-n}$ is not prime, but it is irreducible, then $R$ is not a U.F.D..
+        
+        On the other hand, we assume $(1 + \sqrt{-n})(1 - \sqrt{-n}) = 1+n = 2k$ for some $k \in \mathbb{Z}$. Then we would have $1 + \sqrt{-n} \mid 2k$. However $1 + \sqrt{-n} \nmid 2$ and $1 + \sqrt{-n} \nmid k$. Indeed, since if $(1 + \sqrt{-n})(a + b\sqrt{-n}) = 2$, then
+        \begin{equation}
+            a + a\sqrt{-n} + b\sqrt{-n} - bn = 2 \Rightarrow a = -b \Rightarrow a(1+n) = 2
+        \end{equation}
+        This is not possible since $a,n \in \mathbb{Z}$ and $n > 3$, then $1+n > 4$. Also, if $1 + \sqrt{-n} \mid k$, we have have:
+        \begin{equation}
+            a + a\sqrt{-n} + b\sqrt{-n} - bn = 2 \Rightarrow a = -b \Rightarrow a(1+n) = k \Rightarrow a2k = k \Rightarrow a = \tfrac{1}{2}
+        \end{equation}
+        This contradicts that $b \in \mathbb{Z}$. Thus, $1 + \sqrt{-n}$ is not prime, but it is irreducible, then $R$ is not a U.F.D..
+        
+        Thus, in general $R$ is not a U.F.D..
+    \end{proof}
+\end{answer}
+
+\subsection{Part c}
+
+\begin{question}
+    Exhibit a non-principal ideal in $R$.
+\end{question}
+
+\begin{answer}
+    If $n$ even, then $(2, \sqrt{-n})$ is a non=principal ideal and if $n+1$ is odd, then $(2,1+\sqrt{-n})$ is a non-principal ideal.
+    
+    If $(2,\sqrt{-n}) = (a)$, then $a \mid \sqrt{-n}$, since $\sqrt{-n}$ irreducible, then $a = \pm 1$ or $a = \pm \sqrt{-n}$. Then if $a = \pm \sqrt{-n}$, we would have $a \mid 2$ implies $\sqrt{-n} \mid 2$, which is a contradiction. If $a = \pm 1$, then $(2,\sqrt{-n}) = (1)$, Therefore, $2s + \sqrt{-n}t = 1$, then since $\sqrt{-n} \mid 2k$ for $k = -\tfrac{n}{2}$ by $n$ even, we have $2ks + \sqrt{-n}kt = k$, because $\sqrt{-n} \mid 2k$ and $\sqrt{-n}\mid \sqrt{-n}kt$, then $\sqrt{-n} \mid k$, which is a contradiction to what we proved in Part b, which says $\sqrt{-n} \nmid k$. Similarly, we could show the same thing to $(2,1+\sqrt{-n})$.
+\end{answer}

@@ -1,0 +1,40 @@
+\section{Question 3}
+
+\begin{question}
+    Without using Burnside's $p^a q^b$ theorem, show that every group of order 200 is solvable.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        We will first prove a lemma that we will use later.
+        
+        Lemma: Every $p$-group is solvable.
+        \begin{proof}
+            We will induct on the quotient groups of $G$. First, beacuse $G$ is a $p$-group, then $Z(G)$ is non-trivial by the class equation, consider $G/Z(G)$, if $G/Z(G)$ is abelian, then we are done since $\{e_G\} \triangleleft Z(G) \triangleleft G$ is a normal sequence with each fractor to be abelian. If $G/Z(G)$ is not abelian, then, consider the homomorphism: $\pi: G \to G/Z(G)$. Because $G$ is a $p$-group, then $G/Z(G)$ is again a $p$-group, so that $Z(G/Z(G))$ is not trivial. Let $H_1 = \pi^{-1}(Z(G/Z(G)))$, and we know that $Z(G) \triangleleft H_1$ by the Second Isomorphism Theorem. Also, since $Z(G/Z(G))$ is abelian, then by the bijection correspondence, we know that $H_1$ is abelian. Hence, $H_1/Z(G)$ is abelian. Next, if $G/H_1$ is abelian, then we are done, since we have an abelian normal series $\{e_G\} \triangleleft Z(G) \triangleleft H_1 \triangleleft G$. Otherwise, we could show that there would be some $H_i$ such that $G/H_i$ is abelian by induction. In that case, we show that there is a abelian normal series
+            \begin{equation}
+                \{e_G\} \triangleleft Z(G) \triangleleft H_1 \triangleleft H_2 \triangleleft \cdots \triangleleft H_i \triangleleft G
+            \end{equation}
+            Thus, we know that $p$-groups are all solvable.
+        \end{proof}
+        Now, for a group of order $200$, we know that $n_5 \mid \lvert G \rvert$ and $n_5 \equiv 1 \text{ (mod 5)}$ by the Sylow Theorem \#3. Therefore, the only possible $n_5 = 1$. Hence, there is only one Sylow $5$-subgroup $P_5$ of $G$, and $P_5 \triangleleft G$. Now, we have a normal series
+        \begin{equation}
+            \{e_G\} \triangleleft P_5 \triangleleft G
+        \end{equation}
+        Because $\lvert P_5 \rvert = 25 = 5^2$, and $\lvert G/P_5 \rvert = 8 = 2^3$. Then we knwo that $P_5$ and $G/P_5$ are both solvable. This means, we have the following two normal series:
+        \begin{equation}\label{eqn:eqn6.2}
+            \begin{aligned}
+                    \{e_G\} &\triangleleft H_1 \triangleleft H_2 \triangleleft \cdots \triangleleft H_l \triangleleft P_5\\
+                    P_5/P_5 = \{e_G\} &\triangleleft K_1/P_5 \triangleleft K_2/P_5 \triangleleft \cdots \triangleleft K_m/P_5 \triangleleft G/P_5
+             \end{aligned}
+        \end{equation}
+        From the second series, we could derive another normal series as follows
+        \begin{equation}\label{eqn:eqn7}
+            P_5 \triangleleft K_1 \triangleleft K_2 \triangleleft \cdots \triangleleft K_m \triangleleft G
+        \end{equation}
+        Then, by the Fourth Isomorphism Theorem, we have $(G/P_5)/(K_j/P_5) = G/K_j$ for all $i \in \{1,2,\cdots,m\}$. This shows that all of the composition factors of the series in the equation \ref{eqn:eqn7} are same as the composition factors of the series in the equation \ref{eqn:eqn6.2}. Thus, all the composition factors of equation \ref{eqn:eqn7} are abelian. Now, we construct a normal series of $G$ as:
+        \begin{equation}
+            \{e_G\} \triangleleft H_1 \triangleleft H_2 \triangleleft \cdots \triangleleft H_l \triangleleft P_5 \triangleleft K_1 \triangleleft K_2 \cdots \triangleleft K_m \triangleleft G,
+        \end{equation}
+        and all the composition factors are abelian. Hence, $G$ is solvable.
+    \end{proof}
+\end{answer}

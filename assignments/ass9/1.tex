@@ -1,0 +1,23 @@
+\section{Question 1}
+
+\begin{question}
+    Let $N$ be a submodule of the $R$-module $M$. Prove that if both $N$ and $M / N$ are finitely generated, then so is $M$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Because $M/N$ and $N$ are both finitely generated, then there existing finite sets $\{a_1,a_2,\cdots,a_m\}$ and $\{b_1,b_2,\cdots,b_n\}$ such that:
+        \begin{equation}\label{eqn:eqn1}
+            M/N = \langle a_1+N, a_2+N, \cdots, a_m + N \rangle
+        \end{equation}
+        and
+        \begin{equation} \label{eqn:eqn2}
+            N = \langle b_1, b_2, \cdots, b_n \rangle
+        \end{equation}
+        Then, let $x \in M$, thne by the natural onto map $\pi: M \onto M/N$, we know that $x = \Bar{x} + y$ for some $\Bar{x},y$ such that $\Bar{x}+N \in M/N$ and $y \in N$. Then by the equations \ref{eqn:eqn1} and \ref{eqn:eqn2}, we could rewrite $\Bar{x}$ and $y$ using the generating sets and $r_i, s_j \in R$:
+        \begin{equation}
+                \Bar{x} = \sum_{i = 1}^{m}r_ia_i\quad,\quad y = \sum_{j=1}^{n}s_jb_j
+        \end{equation}
+        Hence, $x = \Bar{x} + y = \sum_{i = 1}^{m}r_ia_i + \sum_{j=1}^{n}s_jb_j$. This shows that $\{a_1,\cdots,a_m,b_1,\cdots,b_n\}$ will be a finite generating set of $M$ with dimension $m+n$. Therefore, $M$ is finitely generated.
+    \end{proof}
+\end{answer}

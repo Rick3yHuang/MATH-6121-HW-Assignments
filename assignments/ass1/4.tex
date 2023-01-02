@@ -1,0 +1,11 @@
+\section{Question 4}
+
+\begin{question}
+   Prove that the order of an element in the symmetric group $S_n$ equals the least common multiple of the lengths of the cycles in its cycle decomposition.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $\tau = c_1c_2c_3\cdots c_m = (\alpha_1\alpha_2\cdots\alpha_k)(\alpha_{k+1}\cdots\alpha_p)c_3\cdots c_m \in S_n$ be an element in its cycle decomposition, where $c_i$ are cycles and $\alpha_i \in \{1,2,\cdots,n\}$. Let $\lvert \tau \rvert = d$, then $\tau^d = (1)$. Since we know that every time $\tau$ has been raised to an one higher power, $\alpha_i$ will be sent to one more element next to it on the right by this power of $\tau$. In particular, it will be sent back to itself, when $\tau$ is raised to a power that is the multiple of the length of the cycle where it locates. Thus, for $\alpha_i$, where $i = \{1,2,\cdots,k\}$, it will be sent to itself by $\tau^{tk}$ for some $t \in \mathbb{Z}$. Therefore, since $\tau^d = (1)$, we know that it would send $\alpha_i$ to itself for $i = \{1,2,\cdots,k\}$. Thus, $k \lvert d$. Similarly, the length of the second cycle in $\tau$, $(p-k)\lvert d$, and the length of $c_i$ should divide $d$. Let the length of $c_i$ be denoted as $l_i$. Then, we know $c_i \lvert d$. Therefore, $\lcm(l_1,l_2,\cdots,l_m)\lvert d$. $\tau^{\lcm(l_1,l_2,\cdots,l_m)} = (1)$ because $\lcm(l_!,l_2,\cdots,l_m)$ is the multiple of any $l_i$ for $i = \{1,2,\cdots,m\}$. Hence, $d = \lvert \tau \rvert = \lcm(l_1,l_2,\cdots,l_m)$. Otherwise, $\lcm(l_1,l_2,\cdots,l_m) < d$ would contradict the definition of $d$ that it is the smallest positive integer such that $\tau^d = e$.
+    \end{proof}
+\end{answer}

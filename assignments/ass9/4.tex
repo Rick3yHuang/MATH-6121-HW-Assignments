@@ -1,0 +1,40 @@
+\section{Question 4}
+
+\begin{question}
+    Prove that two $3 \times 3$ matrices over a field $F$ are similar over $F$ if and only if they have the same characteristic and and minimal polynomials. Give an explicit counterexample to this assertion for $4 \times 4$ matrices.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        ($\Rightarrow$): Let $A,B \in M_3(F)$ such that $A \sim B$. Then, $RCF(A) = RCF(B)$. Then $A$ and $B$ will have the same invariant factors $f_1(x),\cdots,f_m(x)$. Hence the characteristic polynomials will be $P_A(x) = P_B(x) = \prod_{i = 1}^{m}f_i(x)$ and the minimal polynomial will be $m_A(x) = m_B(x) = f_m(x)$ for both $A$ and $B$.
+        
+        ($\Leftarrow$): Assume $A,B \in M_3(F)$ such that $P_A(x) = P_B(x) = f(x)$ and $m_A(x) = m_B(x) = f(x)$. Notice that $\deg g(x) \geq 1$, since otherwise the characteristic polynomials and the minimal polynomials will be constants which is not possible. Also, since $A,B \in M_3(F)$, we know that $\deg (P_A(x)) = 3$. Then we have three cases:
+        \begin{itemize}
+            \item If $\deg g(x) = 1$: Then since $g(x)$ is the largest invariant factor, i.e. other invariant factors will divide $g(x)$, then there must be two other invariant factors and they have to be equal to $g(x)$. That is the invariant factors for both $A$ and $B$ will be $\{g(x),g(x),g(x)\}$.
+            \item If $\deg g(x) = 2$: Then, there will be another invariant factor of degree $1$. Also, we know that the product of the invariant factors will be $P_A(x)$ and $P_B(x)$. Then for the both matrix, we will have the invariant factors $\{g(x),\tfrac{P_A(x)}{g(x)}\}$ and $\{g(x),\tfrac{P_B(x)}{g(x)}\}$ which are the same invariant factors and both equal to $\{g(x),\tfrac{f(x)}{g(x)}\}$.
+            \item If $\deg g(x) = 3$: Then, $g(x)$ will be the only invariant factors for both $A$ and $B$.
+        \end{itemize}
+        Hence, we could see that in any one of the above cases, we could conclude that $A$ and $B$ will have the same invariant factors. This means that $A$ and $B$ will have the same rational canonical forms. Hence, $A \sim B$
+    \end{proof}
+    This is not true for $4 \times 4$ matrix since we can find counterexample as the follows:
+    \begin{equation}
+        A = \left[
+        \begin{matrix}
+            1 & 0 & 0 & 0\\
+            0 & 1 & 0 & 0\\
+            0 & 0 & 0 & -1\\
+            0 & 0 & 1 & 2
+        \end{matrix}
+        \right]
+        \quad, \quad 
+        B = \left[
+        \begin{matrix}
+            0 & -1 & 0 & 0\\
+            1 & 2 & 0 & 0\\
+            0 & 0 & 0 & -1\\
+            0 & 0 & 1 & 2
+        \end{matrix}
+        \right]
+    \end{equation}
+    We could see that $P_A(x) = P_B(x) = (x-1)^4$ and $m_A(x) = m_B(x) = (x-1)^2$, but the two matrices are both in their rational canonical form. The invariant factors of $A$ are $\{(x-1)^2,x-1,x-1\}$ but the invariant factors of $B$ are $\{(x-1)^2,(x-1)^2\}$. This shows that $A$ is not similar to $B$.
+\end{answer}

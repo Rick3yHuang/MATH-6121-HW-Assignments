@@ -1,0 +1,40 @@
+\section{Question 4}
+
+\begin{question}
+    Let $m, n$ be positive integers with $m \mid n$. Prove that there is a surjective ring homomorphism $\mathbf{Z} / n \mathbf{Z} \rightarrow \mathbf{Z} / m \mathbf{Z}$ which induces a surjective homomorphism $(\mathbf{Z} / n \mathbf{Z})^* \rightarrow(\mathbf{Z} / \mathrm{m} \mathbf{Z})^*$ of unit groups.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        We define a function $\varphi$ to be:
+        \begin{equation}
+            \begin{aligned}
+                \varphi: \mathbb{Z}/n\mathbb{Z} &\to \mathbb{Z}/m\mathbb{Z}\\
+                a + n\mathbb{Z} &\mapsto a + m\mathbb{Z}
+            \end{aligned}
+        \end{equation}
+        First, we are going to show that $\varphi$ is a ring homomorphism. Let $a + n\mathbb{Z}, b + n\mathbb{Z} \in \mathbb{Z}/n \mathbb{Z}$, then
+        \begin{equation}
+            \begin{aligned}
+                \varphi\left((a+n\mathbb{Z})(b+n\mathbb{Z})\right) = &\varphi(ab+n\mathbb{Z})\\
+                = &ab + m\mathbb{Z}\\
+                = &(a+m\mathbb{Z})(b+m\mathbb{Z})\\
+                = &\varphi(a+n\mathbb{Z})\varphi(b+n\mathbb{Z}) \text{ (since $m\mid n$)}
+            \end{aligned}
+        \end{equation}
+        and
+        \begin{equation}
+            \begin{aligned}
+                \varphi\left((a+n\mathbb{Z})+(b+n\mathbb{Z})\right) = &\varphi\left((a+b)+n\mathbb{Z}\right)\\
+                = &(a+b) + m\mathbb{Z}\\
+                = &(a+m\mathbb{Z}) + (b+m\mathbb{Z})\\
+                = &\varphi(a+n\mathbb{Z}) + \varphi(b+n\mathbb{Z}) \text{ (since $m\mid n$)}
+            \end{aligned}
+        \end{equation}
+        Therefore, $\varphi$ is indeed a ring homomorphism. Next, we could show $\varphi$ is surjective. Let $c + m\mathbb{Z} \in \mathbb{Z}/m\mathbb{Z}$. We could find $c + n\mathbb{Z}$ such that $\varphi(c+n\mathbb{Z}) = c + m\mathbb{Z}$ because $m \mid n$.
+        
+        Assume $n = m\cdot p_1^{k_1}\cdot \cdots \cdot p_l^{k_l}$. We claim that $\varphi' = \varphi\vert_{(\mathbb{Z}/n\mathbb{Z})^*}$ is a surjective group homomorphism $\varphi': (\mathbb{Z}/n\mathbb{Z})^* \to (\mathbb{Z}/m\mathbb{Z})^*$. This is well-defined since if $a + n\mathbb{Z} \in (\mathbb{Z}/n\mathbb{Z})^*$, then $\gcd(a,n) = 1 \Rightarrow \gcd(a,m) = 1$ since $m \mid n$, which means $a+m\mathbb{Z} \in (\mathbb{Z}/m\mathbb{Z})^*$. This is a group homomorphism since it can be induced by the ring homomorphism $\varphi$.
+        
+        To show $\varphi'$ is surjective, let $c + m\mathbb{Z} \in (\mathbb{Z}/m\mathbb{Z})^*$. Then we claim that there exists some $d + n\mathbb{Z} = c + n\mathbb{Z} \in (\mathbb{Z}/n\mathbb{Z})^*$ such that $\varphi'(c + n\mathbb{Z}) = \varphi'(d + n\mathbb{Z}) = c + m\mathbb{Z}$. since $\gcd(m,p_i) = \gcd(p_i,p_j) = 1$ for all $i \neq j \in \{1,2,\cdots,l\}$. Then by the Chinese Remainder Theorem, we know that $(\mathbb{Z}/n\mathbb{Z})* \cong (\mathbb{Z}/m\mathbb{Z})^* \times (\mathbb{Z}/p_1^{k_1}\mathbb{Z})^* \times \cdots \times (\mathbb{Z}/p_l^{k_l}\mathbb{Z})^* := R$. Then, it is clear that $R \to (\mathbb{Z}/m\mathbb{Z})$ is surjective since we can assign the first entry of elements of $R$ by the elements of $(\mathbb{Z}/m\mathbb{Z})^*$. Hence, $\varphi': (\mathbb{Z}/n\mathbb{Z})^* \cong R \onto (\mathbb{Z}/m\mathbb{Z})^*$ is a surjective group homomorphism.
+    \end{proof}
+\end{answer}

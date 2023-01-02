@@ -1,0 +1,13 @@
+\section{Question 7}
+
+\begin{question}
+    Find all finite groups which have exactly two conjugacy classes.
+\end{question}
+
+\begin{answer}
+        Suppose $G$ is a finite group such that it has exactly two conjugacy classes. Then the class equation of $G$ is 
+        \begin{equation}
+            \lvert G \rvert = \lvert e \rvert + [G:C_G(g)] \text{ for $g$ in the conjugacy class in $G$ other than $e$}.
+        \end{equation}
+        Therefore, $[G:C_G(g)] = \lvert G \rvert - 1$. Since $[G:C_G(g)] = \tfrac{\lvert G \rvert}{\lvert C_G(G) \rvert}$, then $[G:C_G(g)] \mid \lvert G \rvert$. Thus, we have $(\lvert G \rvert - 1) \mid \lvert G \rvert$. Then, the only possible $\lvert G \rvert$ is $2$. Hence, we know that $G = \mathbb{Z}/2\mathbb{Z}$.
+\end{answer}

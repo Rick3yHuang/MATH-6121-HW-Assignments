@@ -1,0 +1,44 @@
+\section{Question 2}
+
+\begin{question}
+    Let $R$ be a commutative ring with 1 , not necessarily an integral domain, and let $S$ be a subset of $R-0$ which contains 1 and is closed under multiplication. Define a relation $\sim$ on $R \times S$ by setting $\left(r_1, s_1\right) \sim\left(r_2, s_2\right)$ iff there exists $t \in S$ such that $t\left(r_1 s_2-r_2 s_1\right)=0$.
+\end{question}
+
+\subsection{Part a}
+
+\begin{question}
+    Prove that $\sim$ is an equivalence relation and that the set $S^{-1} R$ of equivalence classes is naturally a commutative ring with identity.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $(r_1,s_1), (r_2,s_2), (r_3,s_3) \in R \times S$.
+    
+        (Reflexive): $(r_1,s_1) \sim (r_1,s_1)$ since $1(r_1s_1 - r_1s_1) = 0$.
+        
+        (Symmetric): Assume $(r_1,s_1) \sim (r_2,s_2)$, then $\exists t$ such that $t(r_1s_2-r_2s_1) = 0$ which means $t(r_2s_1-r_1s_2) = 0$. This shows $(r_2,s_2) \sim (r_1,s_1)$.
+        
+        (Transitive): Assume $(r_1,s_1) \sim (r_2,s_2)$ and $(r_2,s_2) \sim (r_3,s_3)$, then there exists $t_1,t_2$ such that $t_1(r_1s_2-r_2s_1) = t_2(r_2s_3 - r_3s_2) = 0$, which implies $t_1r_1s_2 = t_2r_2s_1$ and $t_2r_2s_3 = t_3r_3s_2$. Hence, let $t_3 = t_1t_2r_2$, we claim $t_3(r_1s_3-r_3s_1) = 0$. Indeed, since
+        \begin{equation}
+            \begin{aligned}
+            t_3(r_1s_3-r_3s_1) &= t_1t_2r_2(r_1s_3-r_3s_1) = t_1r_1(t_2r_2s_3) - t_2r_3(t_1r_2s_1) \text{ (since $S$ is commutative)}\\
+            &= t_1r_1(t_2r_3s_2) - t_2r_3(t_1r_1s_2) = t_1t_2r_1s_2r_3 - t_1t_2r_1s_2r_3 = 0
+            \end{aligned}
+        \end{equation}
+        Since the three conditions above are satisfied, $\sim$ is an equivalence relation. Also, the set of equivalence classes $S^{-1}R$ is a subring of $K(R)$ which is the field of fractions of $R$. Indeed, since if $[(r_1,s_1)]_{\sim}, [(r_2,s_2)]_{\sim} \in S^{-1}R$, then $[(r_1,s_1)]_{\sim}-[(r_2,s_2)]_{\sim} = [(r_1s_2-r_2r_1,s_1s_2)]_{\sim}$ following the operations of $K(R)$. Because $r_1,r_2,s_1,s_2 \in R$, and $s_1,s_2 \in S$, then $[(r_1,s_1)] - [(r_2,s_2)]_{\sim} \in S^{-1}R$. Therefore, $S^{-1}R$ is closed under addition. Also, $[(r_1,s_1)]_{\sim}[(r_2,s_2)]_{\sim} = [(r_1r_2,s_1s_2)]_{\sim} \in S^{-1}R$ following the multiplication of $K(R)$. Due that $[(1,1)]_{\sim} \in S^{-1}R$, $S^{-1}R$ is a subring of $K(R)$ therefore a commutative ring with identity.
+    \end{proof}
+\end{answer}
+
+\subsection{Part b}
+
+\begin{question}
+    Prove that the ring homomorphism $j: R \rightarrow S^{-1} R$ sending $r$ to the equivalence class of $(r, 1)$ is injective if and only if $S$ does not contain any zero divisors of $R$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        ($\Leftarrow$): Assume $S$ does not contain any zero divisor of $R$, let $r_1,r_2 \in R$, such that $j(r_1) = j(r_2)$. Hence, $[(r_1,1)]_{\sim} = [(r_2,1)]_{\sim}$. This means $(r_1,1) \in [(r_2,1)]_{\sim}$, i.e. $\exists t \in S$ such that $t(r_1-r_2) = 0$. $t \neq 0$ since $0 \notin S$ and $t \in S$ not a zero divisor of $R$ by assumption, so that $(r_1-r_2) = 0$, i.e. $r_1 = r_2$. Thus, $j$ is injective.
+        
+        ($\Rightarrow$): We will show this by proving the contrapositive, i.e. we will show if there is a zero divisor of $R$ in $S$, then $j$ is not injective. Assume, $a \in S$ is a zero divisor of $R$, then there exists a nonzero $b \in R$ such that $ab = 0$. Then for any $r_1 \in R$, we know that $r_1 + kb$ have the same image as $r_1$ by $j$ for any $k \in \mathbb{Z}$. since $a((r_1+kb) - r_1) = akb = kab = 0$ for all $r_1$ and $k$. Therefore, $j$ is not injective. Hence, if $j$ is injective, then $S$ does not contain any zero divisor if $R$.
+    \end{proof}
+\end{answer}

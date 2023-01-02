@@ -1,0 +1,11 @@
+\section{Question 4}
+
+\begin{question}
+    Let $R$ be a commutative ring $R$ with identity. Let $I$ be an ideal of $R$ and let $P_1, \ldots, P_k$ be prime ideals of $R$. If $I \subseteq \bigcup_i P_i$, show that $I \subseteq P_i$ for some $i$. [Hint: If there exist $a_i \in I$ such that $a_i \in P_i$ and $a_i \notin \bigcup_{j \neq i} P_j$ for all $1 \leq i \leq k$, obtain a contradiction by considering the element $x=\sum_i \prod_{j \neq i} a_j$. Use this as the basis of a proof by induction.]
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        If there exist $a_i \in I$ that $a_i \in P_i$ and $a_i \notin \bigcup_{j \neq i}P_j$ for all $i \leq i \leq k$. Then, considering the element $x=\sum_i \prod_{j \neq i} a_j$, we could see that it is an element of $I$, since each $a_i \in I$ for all $i$. However $x \notin P_n$ for all $n$, because $\prod_{j \neq i} a_j \in P_n$ for all $i \neq n$, but $\prod_{j \neq i} a_j \notin P_n$ when $i = n$. Thus, the sum of all this term which is $x$ cannot in $P_n$. However this contradicts the fact that $x \in I \subseteq \bigcup_i P_i$. Therefore, there should be less than $k$ prime ideals containing elements of $I$. Then, by induction, if there exist $a_i \in I$ that $a_i \in P_i$ and $a_i \notin \bigcup_{j \neq i}P_j$ for all $i \leq i \leq m$ (WLOG, the first $m$ prime ideals), then by the same proof in the base case above, we could show that $y = \sum_i \prod_{j \neq i} a_j$ for $1 \leq i \leq m$ is in $I$ but not in any of $P_i$. Also, $x \notin P_l$ for $m < l \leq k$ because $P_l$'s are prime ideals, then since $a_j \notin P_l$, then their products and sums will also not be in $P_l$. Hence, we need to further reduce the number of ideals containing elements of $I$. Finally, we will reach the case that only one of the prime ideals contains all the elements in $I$, i.e. $I \subseteq P_i$ for some $1 \leq i \leq k$.
+    \end{proof}
+\end{answer}

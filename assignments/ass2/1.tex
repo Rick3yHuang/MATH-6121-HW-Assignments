@@ -1,0 +1,21 @@
+\section{Question 1}
+
+\begin{question}
+    If $G$ is a group and $G / Z(G)$ is cyclic, prove that $G$ is abelian.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Suppose by contradiction that $G$ is not abelian. Then, we know that $G/Z(G) \neq \{e_G\}$. Assume $s,t \in G/Z(G)$. Since $G/Z(G)$ is cyclic, we assume $G/Z(G) = \{e_G,x,x^2,x^3,\cdots,x^{n-1}\}$ for some $n \in \mathbb{Z}$ such that $x^n=e_G$. Then, we know that $s = x^{\alpha_1}$ and $t = x^{\alpha_2}$ for some $\alpha_1,\alpha_2 \in \mathbb{Z}$ such that $\alpha_1, \alpha_2 < n$.  Then, we have
+        \begin{equation}
+            \begin{aligned}
+                (x^{\alpha_1}x^{\alpha_2})Z(G) &= (x^{\alpha_1}Z(G))(x^{\alpha_2}Z(G))\\
+                &= Z(G)x^{\alpha_1}x^{\alpha_2}Z(G) \text{ (by the property of $Z(G)$).}\\
+                &= Z(G)x^{\alpha_2}x^{\alpha_2}Z(G)\\
+                &= (x^{\alpha_2}Z(G))(x^{\alpha_2}Z(G)) \text{ (again, by the property of $Z(G)$)}\\
+                &= (x^{\alpha_2}x^{\alpha_1})Z(G).
+            \end{aligned}
+        \end{equation}
+        This shows that $st = x^{\alpha_1}x^{\alpha_2} = x^{\alpha_2}x^{\alpha_2} = ts$. Because, we pick $s$ and $t$ arbitrarily, we know that they should commute with any element in $G/Z(G)$, i.e. any element in $G$. Therefore, $s,t \in Z(G)$. However, this is a contradiction since we choose $s,t$ from $G/Z(G)$. Thus, we know that $G/Z(G) = \{e_G\}$, so that $G=Z(G)$ which implies $G$ is abelian. 
+    \end{proof}
+\end{answer}

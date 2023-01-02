@@ -1,0 +1,41 @@
+\section{Question 7}
+
+\begin{question}
+    Let $G$ be a group of order $p q r$, with $p<q<r$ distinct primes.
+\end{question}
+
+\subsection{Part a}
+
+\begin{question}
+    Show that at least one of the Sylow subgroups of $G$ is normal, and in particular that $G$ is not simple.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Suppose by contradiction that $p,q,r > 1$. Then, by the Sylow Theorem \#3, we have
+        \begin{equation}
+            \begin{aligned}
+                n_p &= q,r, \text{, or }qr\\
+                n_q &= r, \text{, or } pr\\
+                n_r &= pq
+            \end{aligned}
+        \end{equation}
+        Thus, $n_p \geq q$, $n_q \geq r$, and $n_r = pq$. Because, $p,q,r$ are primes. then any of those Sylow subgroups of $G$ $P,P'$ must have trivial intersection. Hence, there are at least $q(p-1)$ elements of $G$ of order $p$, at least $r(q-1)$ elements of $G$ of order $q$, and at least $pq(r-1)$ elements of $G$ of order $r$. Thus, $G$ has at least $pqr - pq + qr - r +pq -q$ distinct elements. However, 
+        \begin{equation}
+            (pqr - pq + qr - r +pq -q) - pqr = qr - r - q = r(q - 1) - (q - 1) - 1 = (r - 1)(p-1)-1 >0.
+        \end{equation}
+        This is a contradiction since $pqr - pq + qr - r +pq -q$ is larger than the order of $G$ which is $pqr$. Therefore, at least one of $n_p, n_q, n_r$ must equal to $1$. Hence, at least one of the Sylow subgroup of $G$ is normal. Hence, $G$ is not simple.
+    \end{proof}
+\end{answer}
+
+\subsection{Part b}
+
+\begin{question}
+    Using part (a), show that in fact the Sylow $r$-subgroup of $G$ is normal.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Suppose by contradiction that $n_r \neq 1$. Then $n_r = pq$.
+    \end{proof}
+\end{answer}

@@ -1,0 +1,74 @@
+\section{Question 3}
+
+\begin{question}
+    Assume $G$ acts transitively on the finite set $A$, and let $H$ be a normal subgroup of $G$
+\end{question}
+
+\subsection{Part a}
+
+\begin{question}
+    Prove that all orbits of $H$ on $A$ have the same cardinality.
+\end{question}
+
+\begin{answer}
+    Let $a_1, a_2 \in A$, then $\exists g \in G$ such that $a_2 = g.a_2$ since $G$ acts transitively on $A$. Then, let $g$ acts on $H.a_1$ by the following function:
+    \begin{equation}
+        \begin{aligned}
+            f: H.a_1 &\to H.a_2\\
+            h.a_1 &\mapsto g.h.a_1
+        \end{aligned}
+    \end{equation}
+    In particular, $g.h.a_1 \in H.a_2$ since 
+    \begin{equation}
+        \begin{aligned}
+            g.h.a_1 &= (gh).a_1\\
+            &= (h'g).a_1 \text{ by $H \trianglelefteq G$ which implies $h'g = gh$}\\
+            &= h'.g.a_1\\
+            &= h'.a_2
+        \end{aligned}
+    \end{equation}
+    
+    Let $n,n' \in H$ such that $g.n.a_1 = g.n'.a_1$, then let $g^{-1}$ act on both sides of the equation, we have $g^{-1}.g.n.a_1 = g^{-1}.g.n.a_1 \Rightarrow n.a_1 = n'.a_1$. This shows $f$ is one-to-one. Next let $k.a_2 \in H.a_2$, then $k \in H$, then $\exists k' = g^{-1}kg\in H$ such that $g.k'.a_1 =k.a_2$. Indeed, $g.k'.a_1 = g.g^{-1}kg.a_1 = (gg^{-1}k).(g.a_1) = k.g_2$. Then, $f$ is onto. Hence, $f$ is a bijective function, and because of that, we know $\lvert H.a_1 \rvert = \lvert H.a_2 \rvert$. Since, we pick $a_1,a_2$ arbitrarily, we showed that all orbits of $H$ on $A$ have the same cardinality.
+\end{answer}
+
+\subsection{Part b}
+
+\begin{question}
+    If $\mathcal{O}$ is an orbit of $H$ on $A$ and $a \in \mathcal{O}$, show that $|\mathcal{O}|=\left|H: H \cap G_a\right|$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Suppose $\mathcal{O} = H.a'$, then let $\mathcal{O}' = H.a$. We know $\lvert \mathcal{O} \rvert = \lvert \mathcal{O} \rvert$ by Part a. Since $H\cap G_a = \{\lvert h \in H \lvert h.a = a\} = H.a$, $H:H \cap G_a = H:H.a$. By the Orbit-Stabilizer Theorem, we know that $[H:H\cap G_a] = [H:H.a] = \lvert \mathcal{O}' \rvert = \lvert \mathcal{O} \rvert$.
+    \end{proof}
+\end{answer}
+
+\subsection{Part c}
+
+\begin{question}
+    Prove that the number of orbits of $H$ on $A$ is equal to $\left|G: H G_a\right|$
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        We could create a diagram \ref{eqn:3} from given information of the question.
+        \begin{equation}\label{eqn:3}
+        \xymatrix@C=3pc@R=4pc{
+            &G\ar@{-}[d]\\
+            &\ar@{-}[dl]HG_a\ar@{-}[dr]\\
+            H\ar@{-}[dr]&  &\ar@{-}[dl]G_a\\
+            &H\cap G_a=Ha
+        }
+        \end{equation}
+        Then, let $r$ denotes the number of orbites of $H$ on $A$ we know that
+        \begin{equation}
+            \begin{aligned}
+                [G:HG_a][HG_a:H][H:Ha] &= [G:Ha] =[G:G_a][G_a:H_a] \text{ (by Lagrange Theorem)}\\
+                &= \lvert A \rvert[G_a:H_a] \text{ (since $G$ acts on $A$ transitively)}\\
+                &= r[H:H_a][G_a:H_a] \text{ (by Part a \& Part b)}\\
+                &= r[H:H_a][HG_a:H] \text{ (by the Third Isomorphism Theorem)}
+            \end{aligned}
+        \end{equation}
+        Hence, $[G:HG_a][HG_a:H][H:H_a] = r[H:H_a][HG_a:H]$ which implies $r = [G:HG_a]$.
+    \end{proof}
+\end{answer}

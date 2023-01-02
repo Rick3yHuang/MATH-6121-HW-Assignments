@@ -1,0 +1,19 @@
+\section{Question 5}
+
+\begin{question}
+    Let $p$ be an odd prime in $\mathbf{Z}$ and let $n$ be a positive integer. Prove that $x^n-p$ is irreducible over the ring $\mathbf{Z}[i]$ of Gaussian integers. [You may use Proposition $8.18$, even though we did not prove it in class.]
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Since $\mathbb{Z}[i]$ is an Euclidean domain, then $\mathbb{Z}[i]$ is a P.I.D., and therefore a U.F.D.. Thus, $\mathbb{Z}[i][x]$ is a U.F.D.. Hence, we can use the Eisenstein Criterion to check whether $x^n - p$ is irreducible, i.e. we want find a prime element $m \in \mathbb{Z}[i]$, such that $m \mid -p$ but $m^2 \nmid -p$.
+        
+        Since $p$ is an odd prime in $\mathbb{Z}$, then this means that $p \equiv 1 \text{ or } 3 \,(\mod 4)$.
+        
+        (Case 1): If $p \equiv 1 \,(\mod 4)$, then we claim that $m = a+bi$ such that $a^2 + b^2 = p$. By the Proposition 8.18, we know that $a+bi$  is a prime element in $\mathbb{Z}[i]$ when $p \equiv 3 \,(\mod 4)$. First $m = a+bi \mid -p$ since $m (-a+bi) = -p$, and  $-a +bi \in \mathbb{Z}$. Now, assume by contradiction that there exist $r \in \mathbb{Z}[i]$ such that $m^2 \cdot r = -p$. Then, since $\mathbb{Z}[i]$ is a domain, then $m^2 \cdot r = -p = m \cdot (-a + bi) \Rightarrow m \cdot r = -a + bi$. Then, $\lvert m \rvert^2 \lvert r \rvert^2 = \lvert -a + bi \rvert^2$, which means $(a^2 + b^2)\lvert r \rvert^2 = (a^2 + b^2)$. Then, $\lvert r \rvert^2 = 1$. Therefore, $r = 1,-1,i,$ or $-i$. However, $(a+bi)\cdot 1 = a+bi \neq -p$, $(a+bi)\cdot (-1) = -a -bi \neq -p$, $(a+bi)\cdot i = -b + ai \neq -p$, and $(a+bi)\cdot(-i) = b - ai \neq p$. Thus, this is a contradiction. Then, $m^2 \nmid -p$.
+        
+        (Case 2): If $p \equiv 3 \,(\mod 4)$, then we claim that $m = p$ works. Using the Proposition 8.18, we know that $p$ is a prime element in $\mathbb{Z}[i]$. Indeed, $p \mid -p$ since $p \cdot (-1) = -p$ and $-1 \in \mathbb{Z}[i]$. Also, suppose by contradiction that $m^2 \cdot q = -p$ for some $q \in \mathbb{Z}[i]$. Then if we look at the norm of the elements, we have $\lvert m^2 \rvert \lvert q \rvert = \lvert -p \rvert$. However, $\lvert m^2 \rvert = p^2$ and $\lvert q \rvert \geq 1$ since $q \in \mathbb{Z}[i]$. Then $p = \lvert -p \rvert = \lvert m^2 \rvert \lvert q \rvert \geq p^2 > p$ since $p \geq 3$ in this case. This is a contradiction, so that $m^2 \nmid -p$
+        
+        Now, by the Eisenstein Criterion, we know that $x^n-p$ is irreducible in $\mathbb{Z}[i][x]$.
+    \end{proof}
+\end{answer}

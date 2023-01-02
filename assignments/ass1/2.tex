@@ -1,0 +1,37 @@
+\section{Question 2}
+
+\begin{question}
+    Let $G$ be a finite group, and suppose that $x,y \in G$ commute with one another, i.e., $xy = yx$.
+\end{question}
+
+\subsection{Part (a)}
+
+\begin{question}
+    Prove that $\lvert xy\rvert$ divides $\lcm(\lvert x\rvert,\lvert y\rvert)$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $\lvert x \rvert = a$, $\lvert y \rvert = y$, and  $\lcm(a,b) = c$. Then, we know $a \lvert c$ and $b \lvert c$, which means $x^c = e_G$ and $y^c = e_G$. Therefore, $(xy)^c = (xy)(xy)(xy)\cdots(xy)$. Since $x,y$ commute with one another, we have $(xy)^c = x^cy^c = e_G\cdot e_G = e_G$. Therefore, $\lvert xy \rvert$ divides $\lcm(\lvert x \rvert, \lvert y \rvert)$.
+    \end{proof}
+\end{answer}
+
+\subsection{Part (b)}
+
+\begin{question}
+    Give an example showing that $\lvert xy\rvert$ can be a proper divisor of $\lcm(\lvert x\rvert,\lvert y\rvert)$.
+\end{question}
+
+\begin{answer}
+    For example, in $(\mathbb{Z}/7\mathbb{Z},+)$, $\lvert 3 \rvert = \lvert 4 \rvert = 7$. Then, $\lcm(\lvert 3 \rvert, \lvert 4 \rvert) = 7$. Notice $3 + 4 = 0$ in $\mathbb{Z}/7\mathbb{Z}$ and $\lvert 0 \rvert = 1$. $\lvert 3+4 \rvert$ is a proper divisor of $\lcm(\lvert 3 \rvert, \lvert 4 \rvert)$.
+\end{answer}
+
+\subsection{Part (c)}
+
+\begin{question}
+   Must $\lvert xy\rvert$ divide $\lcm(\lvert x\rvert,\vert y\rvert)$ if we do not assume that $x$ and $y$ commute?
+\end{question}
+
+\begin{answer}
+    If $x, y$ don't commute, then $\lvert xy \rvert$ doesn't necessarily divide $\lcm(\lvert x \rvert, \lvert y \rvert)$. For example, in $D_{8} = \langle \sigma, \tau \lvert \sigma^4 = \tau^2 = e, \text{ and } \sigma\tau = \tau\sigma^{-1}\rangle$, $\lvert \tau \rvert = \lvert \sigma\tau \rvert = 2$. However, $(\sigma\tau)\tau = \sigma\tau^2 = \sigma$ and $\lvert \sigma \rvert = 4 \nmid 2$.
+\end{answer}

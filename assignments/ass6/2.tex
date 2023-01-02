@@ -1,0 +1,79 @@
+\section{Question 2}
+
+\begin{question}
+    An element $x$ of a commutative ring $R$ with identity is called nilpotent if $x^m=0$ for some positive integer $m$.
+\end{question}
+
+\subsection{Part a}
+
+\begin{question}
+    If $x \in R$ is nilpotent and $y \in R$ is a unit, prove that $x+y$ is a unit.
+\end{question}
+
+\begin{answer}
+    Because $y$ is a unit, then $y^{-1}$ is well-defined. We claim that $$(x+y)^{-1} = \sum_{n = 1}^{m}(-1)^{n+1}x^{n-1}y^{-n}$$
+    \begin{proof}
+        \begin{equation}
+            \begin{aligned}
+                (x+y)(x+y)^{-1} =& (x+y)\sum_{n = 1}^{m}(-1)^{n+1}x^{n-1}y^{-n}\\
+                =& \sum_{n = 1}^{m}(-1)^{n+1}x^{n}y^{-n} + \sum_{n = 1}^{m}(-1)^{n+1}x^{n-1}y^{-(n-1)}\\
+                =& \sum_{n = 1}^{m}\left((-1)^{n+1}x^{n}y^{-n}+(-1)^{n+1}x^{n-1}y^{-(n-1)}\right)\\
+                =& \sum_{n = 1}^{m}(-1)^{n+1}\left(x^{n}y^{-n}+x^{n-1}y^{-(n-1)}\right)\\
+                =& xy^{-1} + 1 - x^2y^{-2} - xy^{-1} + x^{3}y^{-3} + x^2y^{-2} - \cdots + (-1)^{m}x^{m-1}y^{(m-1)}\\
+                &+ (-1)^{m}x^{m-2}y^{-(m-2)} + (-1)^{m+1}x^{m}y^{m} + (-1)^{m+1}x^{m-1}y^{-(m-1)}\\
+                =& 1 + (-1)^{m+1}x^{m}y^{m}\\
+                =& 1 \text{ (since $x^m = 0$)}
+            \end{aligned}
+        \end{equation}
+        Since because $R$ is a commutative ring, $(x+y)(x+y)^{-1} = (x+y)^{-1}(x+y) = 1$ means that $x+y$ is a unit.
+    \end{proof}
+\end{answer}
+
+\subsection{Part b}
+
+\begin{question}
+    Prove that the set of nilpotent elements in $R$ forms an ideal $N(R)$ (called the nilradical of $R$ ). Give an example where the conclusion can fail if $R$ is not commutative.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $a,b \in N(R)$ such that $a^m = b^n = 0$. Thus, by the Binomial Theorem, we have
+        $$(a-b)^{m+n}=\sum_{i = 0}^{m+n} {m+n \choose i}a^{m+n-i}b^{i}$$
+        when $0 \leq i \leq n$, $a^{m+n-i}b^{i} = 0$ since $m+n-i \geq m \Rightarrow a^{m+n-i} = 0$, and when $n < i \leq m+n$, $a^{m+n-i}b^{i} = 0$ since $i > n \Rightarrow b^i = 0$. Thus, $(a+b)^{m+n} = 0$. Hence, $N(R)$ is an additive subgroup of $R$. 
+        
+        Let $c \in R$, then $(ac)^m = a^mc^m = 0c^m = 0$ because $R$ is a commutative ring. Thus, $ac \in N(R)$. Hence, $N(R)$ is an ideal.
+    \end{proof}
+    For example if $R = M_2(\mathbb{R})$. Note that $[\begin{smallmatrix}0 & 1\\ 0 & 0\end{smallmatrix}] \in N(R)$, and $[\begin{smallmatrix}0 & 1\\ 0 & 0\end{smallmatrix}][\begin{smallmatrix}1 & 2\\ 3 & 4\end{smallmatrix}] = [\begin{smallmatrix}3 & 4\\ 0 & 0\end{smallmatrix}]$. However, $[\begin{smallmatrix}3 & 4\\ 0 & 0\end{smallmatrix}]^p = [\begin{smallmatrix}3^p & 4\cdot 3^{p-1}\\ 0 & 0\end{smallmatrix}] \neq 0$ for any positive integer $p$. Therefore, $[\begin{smallmatrix}3 & 4\\ 0 & 0\end{smallmatrix}] \notin N(R)$. This contradicts the absorption property for $N(R)$ to be an ideal of $R$.
+\end{answer}
+
+\subsection{Part c}
+
+\begin{question}
+    Prove that $R / N(R)$ has no nonzero nilpotent elements.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Assume for contradiction that $x + N(R) \in R/N(R)$ for $x \neq 0$ and $(x + N(R))^m = 0$ for some $m > 0$. Then $(x + N(R))^m = x^m + N(R) = 0 = N(R)$. Thus, $x^m \in N(R)$. Hence, there exist some positive integer $n$ such that $(x^m)^n = 0$, thus, $x^{mn} = 0$ where $mn$ is a positive integer. since $x \neq 0$, then $x \in N(R)$, which leads to a contradiction. This shows that there is no nonzero nilpotent elements in $R/N(R)$.
+    \end{proof}
+\end{answer}
+
+\subsection{Part d}
+
+\begin{question}
+    Prove that $N(R)$ is the intersection of all prime ideals of $R$. [Hint: Suppose $a \in R$ is not nilpotent, and let $\Sigma$ be the set of all ideals $I$ of $R$ such that $a^n \notin I$ for all $n \geq 1$. Use Zorn's Lemma to show that $\Sigma$ has a maximal element $P$, and show that $P$ is a prime ideal not containing $a$.]
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Suppose $a \in R$ is not nilpotent, then let $\Sigma = \{I \subset R \mid I \text{ is an ideal, and } a^n \notin I,\; \forall n \geq 1\}$. Then Suppose there is a family of ideals $\{I_{\alpha}\}_{\alpha \in A}$ such that
+        $$I_1 \subset I_2 \subset \cdots $$
+        We claim $\bigcup_\alpha I_\alpha$ is the upper bound of the chain. First, clearly each $I_\alpha \subset \bigcup_{\alpha} I_\alpha$ and $\bigcup_\alpha I_\alpha \in \Sigma$. Then, we need to show $\bigcup_\alpha I_\alpha$ is an ideal of $R$. Let $a \in I_a,\ b \in I_b$, therefore $a,b \in \bigcup_\alpha I_\alpha$, then suppose WLOG that $I_a \subset I_b$, then $a - b \in I_b \subset \bigcup_\alpha I_\alpha$. Let $c \in R$, $ac = ca \in \bigcup_\alpha I_\alpha$ since the absorption property holds for the Ideal $I_a$. Thus, by the Zorn's Lemma, we know that there is a maximal element $P$ in $\Sigma$, i.e. a maximal ideal. Because maximal implies prime, we know that $P$ is also a prime ideal. Because $P \in \Sigma$, $a^n \notin P$ for all $n > 1$. Thus, for all element in $R$ that is not nilpotent, we could find such a prime ideal doesn't contain this element and all its power. If we the intersection of all these prime ideals we found, we have the intersection to be
+        $$Q = \bigcup_\alpha P_{\alpha}$$
+        Then, there is no non-nilpotent element of $R$ in $Q$. Because every element in $R$ is either nilpotent or non-nilpotent, we know that $Q \subseteq N(R)$. Denote the intersection of all prime ideals in $R$ to be $Q'$, then $Q' \subseteq Q \subseteq N(R)$.
+        
+        Now, let $x \notin Q'$, then $x^m \notin Q'$ for all $m >0$ since the prime property. Because $0 \in Q'$, then $x^m \neq 0$ for all $m > 0$. Hence, $x \notin N(R)$. Take the contrapositive, we have $x \in N(R) \Rightarrow x \in Q'$, this show $N(R) \subseteq Q'$.
+        
+        In conclusion, we know $N(R)$ is the intersection of all prime ideals in $R$.
+    \end{proof}
+\end{answer}

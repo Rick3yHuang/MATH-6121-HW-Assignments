@@ -1,0 +1,19 @@
+\section{Question 3}
+
+\begin{question}
+    Find the number of elements of order 2 in $\mathbb{Z} / 60 \mathbb{Z} \times \mathbb{Z} / 45 \mathbb{Z} \times \mathbb{Z} / 12 \mathbb{Z} \times$ $\mathbb{Z} / 36 \mathbb{Z}$
+\end{question}
+
+\begin{answer}
+    Since the order of element in a groups in the form a direct product is the least common multiple of the orders of entries in this element pointwisely, therefore element of order $2$ must in the form of $(a,b,c,d)$ such that $\lcm(\lvert a\rvert,\lvert b\rvert,\lvert c\rvert,\lvert d\rvert) = 2$. This means $\lvert a\rvert,\lvert b\rvert,\lvert c\rvert,\lvert d\rvert \in \{1,2\}$ and they cannot all be $1$ at the same time.
+    
+    There are 2 elements of order $1$ or $2$ in $\mathbb{Z}/60\mathbb{Z}$ ($0$ has order $1$ and $30$ has order $2$).
+    
+    There are 1 element of order $1$ or $2$ in $\mathbb{Z}/45\mathbb{Z}$ ($0$ has order $1$, no element has order $2$).
+    
+    There are 2 element of order $1$ or $2$ in $\mathbb{Z}/12\mathbb{Z}$ ($0$ has order $1$ and $6$ has order $2$).
+    
+    There are 2 element of order $1$ or $2$ in $\mathbb{Z}/36\mathbb{Z}$ ($0$ has order $1$ and $18$ has order $2$).
+    
+    Thus, there are $2\times 1\times 2\times 2 - 1 = 7$ elements of order $2$ in $\mathbb{Z}/60\mathbb{Z} \times \mathbb{Z}/45\mathbb{Z} \times \mathbb{Z}/12\mathbb{Z} \times \mathbb{Z}/36\mathbb{Z}$.
+\end{answer}

@@ -1,0 +1,15 @@
+\section{Question 1}
+
+\begin{question}
+    If $x,y$ are conjugate elements of a group $G$ (this means that $y = g^{−1}xg$ for some $g \in G$), prove that $x$ and $y$ have the same order. Deduce that $\lvert ab\rvert = \lvert ba\rvert$ for all $a,b ∈ G$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        If $\lvert x \rvert = \infty$, then suppose by contradiction that $\lvert y \rvert = k \neq \infty$, where $k \in \mathbb{Z}$. Then $y^k = e_G = (g^{-1}xg)^k = g^{-1}x^kg$. Then, we have $ge_Gg^{-1}=gg^{-1}x^kgg^{-1}$, which give us $x^k = e_G$. Therefore, $\lvert x \rvert \leq k$. This is a contradiction to the assumption that $\lvert x \rvert = \infty$. Thus, $\lvert x \rvert = \lvert y \rvert$
+        
+        If $\lvert x \rvert = m \neq \infty$ for some $m \in \mathbb{Z}$. Then, $x^m = e_G$. Then since $y^m = (g^{-1}xg)^m = g^{-1}x^mg = g^{-1}e_Gg = g^{-1}g = e_G$, we know $\lvert y \rvert \leq m$. Suppose by contradiction that $\lvert y = \rvert = n$ for some $n \in \mathbb{Z}$ and $n < m$. Thus, $y^n = e_G = (g^{-1}xg)^n = g^{-1}x^ng$. Then, we have $ge_Gg^{-1}=gg^{-1}x^ngg^{-1}$, which give us $x^n = e_G$. Therefore, $\lvert x \rvert \leq n$. This is a contradiction to the assumption that $\lvert x \rvert = m > n$. Therefore, we know that $m$ is the largest positive integer such that $y^m = e_G$. Hence, by definition, $\lvert y \rvert = m = \lvert x \rvert$.
+        
+        Thus, if $x,y$ are conjugate elements of a group $G$, $\lvert x \lvert = \lvert y \rvert$. Thus, $\lvert ab \rvert = \lvert ba \rvert$ since $ba = a^{-1}(ab)a$ for some $a,b \in G$.
+    \end{proof}
+\end{answer}

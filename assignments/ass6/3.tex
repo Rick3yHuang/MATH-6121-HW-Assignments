@@ -1,0 +1,15 @@
+\section{Question 3}
+
+\begin{question}
+    Prove that the following are equivalent: (i) $R$ has a unique prime ideal; (ii) every element of $R$ is either nilpotent or a unit; (iii) $R / N(R)$ is a field.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        (i) $\Rightarrow$ (ii) \& (iii): Suppose $R$ has unique prime ideal $P$. Then by the Theorem we proved in class, we know that $P \subseteq M$ for $M$ be a maximal ideal of $R$. This maximal ideal is the unique one, since otherwise there will be another prime ideal due that maximal implies prime. Thus, $R$ is a local ring. By Question 4, Part d, we know that $N(R)$ is the intersection of the prime ideals, so we have $P = N(R) = M$. Then, by Question 1 Part a, we have $R - N(R)$ contains all units of $R$. Hence, every element of $R$ is either nilpotent or a unit. Also, since $N(R)$ is maximal, then $R/N(R)$ is a field.
+        
+        (ii) $\Rightarrow$ (i) \& (iii): Suppose every element of $R$ is either nilpotent or a unit. A non-zero nilpotent element is not a unit, because otherwise we would have $(x^{-1})^{m-1}x^m = (x^{-1})^{m-1}0 \Rightarrow x = 0$ if $x^m = 0$. Therefore, by Question 1 Part b, we know that $N(R)$ is a maximal ideal of $R$ and $R$ is a local ring. Thus, $R/N(R)$ is a field. Also because maximal implies prime, $N(R)$ is also a prime ideal. If there is another prime ideal, then it must be a subring of $N(R)$ since it is the only maximal. However, this contradict the fact that the intersection of the prime ideals need to equal to $N(R)$, because the new prime ideal is smaller than $N(R)$. Thus, $R$ has a unique prime ideal.
+        
+        (iii) $\Rightarrow$ (i) \& (ii): Suppose $R/N(R)$ is a field, then $N(R)$ is a maximal ideal of $R$. By Question 1 Part a, we know that $R-N(R)$ are units in $R$. Thus, every element of $R$ is either nilpotent or a unit. Also, by Question 1 Part a, we know that $R$ is a local ring. Thus, $N(R)$ is the unique ideal of $R$, and by the proof above, this implies $N(R)$ is also the unique prime ideal of $R$.
+    \end{proof}
+\end{answer}

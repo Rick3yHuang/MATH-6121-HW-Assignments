@@ -1,0 +1,104 @@
+\section{Question 5}
+
+\begin{question}
+    (Semidirect products) Let $G$ be a group and let $K$ and $H$ be subgroups of $G$ with $K \triangleleft G$. For $x \in G$, let $\gamma_x: K \rightarrow K$ denote (left) conjugation by $x$.
+\end{question}
+
+\subsection{Part a}
+
+\begin{question}
+    Show that $K H=H K$ is a subgroup of $G$ and that the map $\gamma: H \rightarrow$ $\operatorname{Aut}(K)$ given by $x \mapsto \gamma_x$ is a homomorphism.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Since $K \triangleleft G$, then $HK = KH$. Let $h_1k_1, h_2k_2 \in HK$. Then, $h_1k_1(h_2k_2)^{-1} = h_1k_1k_2^{-1}h_2^{-1}$. Because $k_1k_2^{-1} \in K$, then let $k_3 = k_1k_2^{-1}$. we have $h_1k_1(h_2k_2)^{-1} = h_1k_3h_2^{-1}$. Next, since $K \triangleleft G$, then $k_3h_2^{-1} = h_2^{-1}k_4$ for some $k_4 \in K$. Therefore, $h_1k_1(h_2k_2)^{-1} = h_1h_2^{-1}k_4$. Again, let $h_3 = h_1h_2^{-1} \in H$, we have $h_1k_1(h_2k_2)^{-1} = h_3k_4 \in HK$. Since $H \leq G$ and $K \triangleleft G$, we know $e_G \in H$ and $e_G \in K$, therefore $e_G = e_G\cdot e_G \in HK$. Thus, $HK = KH \leq G$.
+        
+        Let $h_1,h_2 \in H$ and $k \in K$, then $\gamma(h_1h_2)(k) = \gamma_{h_1h_2}(k) = h_1h_2k(h_1h_2)^{-1} = h_1h_2(k)h_2^{-1}h_1^{-1} = h_1\gamma_{h_2}(k)h_1^{-1} = \gamma_{h_1}(\gamma_{h_2}(k)) = \gamma_{h_1}\gamma_{h_2}(k) = \gamma(h_1)\gamma(h_2)(k)$ since $\gamma_{h_1}$ and $\gamma_{h_2}$ are group actions. Thus, $\gamma$ is a group homomorphism.
+    \end{proof}
+\end{answer}
+
+\subsection{Part b}
+
+\begin{question}
+    If $K \cap H=\{e\}$ and $K H=G$, show that $G$ is isomorphic to the group whose underlying set is $H \times K$, with binary operation
+    $$
+    \left(x_1, y_1\right) *\left(x_2, y_2\right)=\left(x_1 x_2, \gamma_{x_2^{-1}}\left(y_1\right) y_2\right)
+    $$
+\end{question}
+
+\begin{answer}
+    Define a map:
+    \begin{equation}
+        \begin{aligned}
+            \varphi: HK &\to H \times K\\
+            hk &\mapsto (h,k).
+        \end{aligned}
+    \end{equation}
+    We will show this defines an isomorphism.
+    
+    First, we want to show this is a well-defined map. Let $h_1k_1 = h_2k_2$, it is clear that $(h_1,k_1) = (h_2,k_2)$. Therefore $\varphi(h_1k_1) = \varphi(h_2k_2)$. Hence, $\varphi$ is well-defined.
+    
+    Next, we want to show this is a homomorphism. Using the same $h_1k_1, h_2k_2 \in HK$, we have:
+    \begin{equation}
+        \begin{aligned}
+            \varphi(h_1k_1h_2k_2) &= \varphi(h_1h_2h_2^{-1}k_1h_2k_2)\\
+            &= \varphi((h_1h_2)(h_2^{-1}k_1h_2k_2))\\
+            &= (h_1h_2,\gamma_{h_2^{-1}}(k_1)k_2) \text{ (Because $h_1h_2 \in H$ and $h_2^{-1}k_1h_2k_2 \in G$)}\\
+            &= (h_1,k_1) \star (h_2,k_2)\\
+            &= \varphi(h_1k_1) \star \varphi(h_2k_2)
+        \end{aligned}
+    \end{equation}
+    Hence, this is indeed a homomorphism.
+    
+    Then, let $\varphi(h_1k_1) = \varphi(h_2k_2)$, then $(h_1,k_1) = (h_2,k_2)$, so that $h_1k_1 = h_2k_2$. Thus, $\varphi$ is injective.
+    
+    Finally, for all $(h,k) \in H\times K$, we can also find $hk \in HK$ such that $\varphi(hk) = (h,k)$. Therefore, $\varphi$ is surjective.
+    
+    Hence $G \cong HK \cong H\times K$
+\end{answer}
+
+\subsection{Part c}
+
+\begin{question}
+    Turning the above construction around, suppose you are given groups $K$ and $H$ together with a homomorphism $\varphi: H \rightarrow \operatorname{Aut}(K)$ written as $x \mapsto \varphi_x$. Define $H \ltimes_{\varphi} K$ (the semidirect product of $H$ and $K$ with respect to $\varphi)$ to be the set $H \times K$ together with the binary operation
+    $$
+    \left(x_1, y_1\right) *\left(x_2, y_2\right)=\left(x_1 x_2, \varphi_{x_2^{-1}}\left(y_1\right) y_2\right) .
+    $$
+    Prove that $G:=H \ltimes_{\varphi} K$ is a group.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $(h_1,k_1), (h_2,k_2),(h_3,k_3)\in H \ltimes_{\varphi} K$. Then
+        \begin{equation}
+            \begin{aligned}
+                ((h_1,k_1)\star(h_2,k_2))\star(h_3,k_3) &= (h_1h_2,\varphi_{h_2^{-1}}(k_1)k_2)\star(h_3,k_3)\\
+                &= ((h_1h_2)h_3,\varphi_{h_3^{-1}}(\varphi_{h_2^{-1}}(k_1)k_2)k_3)\\
+                &= (h_1(h_2h_3),\varphi_{h_3^{-1}}(\varphi_{h_2^{-1}}(k_1))\varphi_{h_3^{-1}}(k_2)k_3)\\
+                &= (h_1(h_2h_3),\varphi_{h_3^{-1}h_2^{-1}}(k_1)\varphi_{h_3^{-1}}(k_2)k_3)\\
+                &= (h_1,k_1)\star(h_2h_3,\varphi_{h_3^{-1}}(k_2)k_3)\\
+                &= (h_1,k_1)\star((h_2,k_2)\star(h_3,k_3))
+            \end{aligned}
+        \end{equation}
+        Thus, the associative property is satisfied.
+        
+        $(e_H,e_K)$ is the identity of $H \ltimes_{\varphi} K$, since $(e_H,e_K) \star (h,k) = (h,k) = (h,k) \star (e_H,e_K)$.
+        
+        The inverse of $(h,k)$ is $(h^{-1},\varphi_h(k^{-1}))$, since $(h,k)\star(h^{-1},\varphi_h(k^{-1})) = (h^{-1},\varphi_h(k^{-1}))\star(h,k) = (e_H,e_K)$. Also, $h^{-1} \in H$ and $\varphi_h(k^{-1}) \in K$, then $(h^{-1},\varphi_h(k^{-1})) \in H \ltimes_{\varphi} K$.
+        
+        $(h_1,k_1)\star(h_2,k_2) = (h_1h_2, \varphi_{h_2^{-1}}(k_1)k_2) \in H \ltimes_{\varphi} K$.
+        
+        Thus, $(H \ltimes_{\varphi} K,\star)$ is a group.
+    \end{proof}
+\end{answer}
+
+\subsection{Part d}
+
+\begin{question}
+    Identifying $K$ with the subgroup $\{(x, e) \mid x \in K\}$ and $H$ with the subgroup $\{(e, y) \mid y \in H\}$ of $G$, prove that $K \triangleleft G, K \cap H=\{e\}$, and $K H=G$
+\end{question}
+
+\begin{answer}
+    
+\end{answer}

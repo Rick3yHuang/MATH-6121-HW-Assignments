@@ -1,0 +1,50 @@
+\section{Question 7}
+
+\begin{question}
+    Let $I, J$ be ideals in a commutative ring $R$ with identity.
+\end{question}
+
+\subsection{Part a}
+
+\begin{question}
+    Prove that
+    $$
+    I J=\left\{x_1 y_1+\cdots+x_k y_k: x_1, \ldots, x_k \in I, y_1, \ldots, y_k \in J\right\}
+    $$
+    is an ideal contained in $I \cap J$. Give an example where $I J \neq I \cap J$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $z \in R$. Now,
+        \begin{equation}
+            z(x_1 y_1+\cdots+x_k y_k) = zx_1y_1 + \cdots zx_ky_k = (zx_1)y_1 + \cdots (zx_k)y_k \in IJ,
+        \end{equation}
+        because $I$ is an ideal of $R$, then $zx_i \in I\; \forall i$, and since $R$ is commutative, then
+        \begin{equation}
+            (x_1 y_1+\cdots+x_k y_k)z \in IJ,
+        \end{equation}
+        Therefore, $IJ$ is an ideal of $R$. Also, since $I$ and $J$ are the ideals of $R$, then each $x_iy_i \in I\cap J$. Hence, $IJ \subseteq I \cap J$.
+    \end{proof}
+    Example: $R = \mathbb{Z}$, $I = 2\mathbb{Z}$ and $J = 4\mathbb{Z}$.
+\end{answer}
+
+\subsection{Part b}
+
+\begin{question}
+    If $I+J=R$, prove that $I J=I \cap J$
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Because $R = I+J$ we have:
+        $$
+        \begin{aligned}
+            I &\cap J \subseteq(I \cap J) R\\
+            = &(I \cap J)(I+J)\\
+            =&I(I \cap J)+J(I \cap J) \text{ (distributive property)}\\
+            \subseteq &I J+I J=I J
+        \end{aligned}
+        $$
+    \end{proof}
+\end{answer}

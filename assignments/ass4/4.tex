@@ -1,0 +1,25 @@
+\section{Question 4}
+
+\begin{question}
+    Prove, without using the Feit-Thompson Theorem, that the following are equivalent:
+    
+    (i) Every group of odd order is solvable.
+    
+    (ii) The only simple groups of odd order are $\mathbf{Z} / p \mathbf{Z}$ for $p$ an odd prime.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        (i) $\Rightarrow$ (ii). Let $G$ be a simple group with an odd order. Since every group of odd order is solvable, then $G$ is solvable, i.e.
+        \begin{equation}
+            \{e_G\} \triangleleft G
+        \end{equation}
+        the only normal series of $G$ and its factor is abelain. Thus, $G$ is simple and abelian. Form the lemma we proved in Question 3, we know that $G$ is of prime order. Hence $G \cong \mathbb{Z}/p\mathbb{Z}$.
+        
+        (ii) $\Rightarrow$ (i). Let $G$ be a group of odd order. By the lemma we proved in class, we know that every finite group has at least one composition series, then there must be a composition series:
+        \begin{equation}
+            G_0 = \{e_G\} \triangleleft G_1 \triangleleft G_2 \triangleleft \cdots \triangleleft G_k = G.
+        \end{equation}
+        Because $\lvert G \rvert$ is odd, by Lagrange Theorem, we know that each $G_{i+1}/G_{i}$ had odd order for all $i \in \{0,1,2,\cdots,k-1\}$. Then, since the only simple groups of odd order are $\mathbb{Z}/p\mathbb{Z}$ for $p$ and odd prime. These composition factors are cyclic, and therefore abelian. Hence, this composition series actually show that $G$ is solvable.
+    \end{proof}
+\end{answer}

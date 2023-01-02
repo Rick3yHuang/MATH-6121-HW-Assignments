@@ -1,0 +1,22 @@
+\section{Question 2}
+
+\begin{question}
+    Write down a complete list of all abelian groups of order 270 (up to isomorphism) using (a) invariant factors and (b) elementary divisors. Be sure to specify which groups correspond to one another in your two lists.
+\end{question}
+
+\begin{answer}
+    Because $270 = 2\cdot3^3\cdot5$ and we could partition $3$ as $3 = 3 = 1+2 = 1+1+1$, we have the following abelian groups of order $270$ using the invariant factors and corresponding elementary divisor:
+    \begin{table}[H]
+        \centering
+            \begin{tabular}{|c|c|}
+                \hline
+                Invariant Factor Decomposition                                                      & Elementary Divisors Decomposition                                                                                                                \\ \hline
+                $\mathbb{Z}/270\mathbb{Z}$                                                          & $\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/27\mathbb{Z} \times \mathbb{Z}/5\mathbb{Z}$                                                            \\ \hline
+                $\mathbb{Z}/3\mathbb{Z}\times\mathbb{Z}/90\mathbb{Z}$                               & $\mathbb{Z}/2\mathbb{Z} \times (\mathbb{Z}/3\mathbb{Z}\times\mathbb{Z}/9\mathbb{Z}) \times \mathbb{Z}/5\mathbb{Z}$                               \\ \hline
+                $\mathbb{Z}/3\mathbb{Z} \times \mathbb{Z}/3\mathbb{Z}\times\mathbb{Z}/30\mathbb{Z}$ & $\mathbb{Z}/2\mathbb{Z} \times (\mathbb{Z}/3\mathbb{Z}\times\mathbb{Z}/3\mathbb{Z} \times \mathbb{Z}/3\mathbb{Z}) \times \mathbb{Z}/5\mathbb{Z}$ \\ \hline
+            \end{tabular}
+        \caption{Abelian groups of order $270$ using invariant factor and elementary divisor decomposition}
+        \label{tab:tab1}
+    \end{table}
+    In the table \ref{tab:tab1}, the groups in the invariant factor decomposition are isomorphic to the groups in the elementary divisor decomposition in the same row.
+\end{answer}

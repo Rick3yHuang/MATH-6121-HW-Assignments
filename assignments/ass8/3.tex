@@ -1,0 +1,15 @@
+\section{Question 3}
+
+\begin{question}
+    Let $R$ be the ring of polynomials in $x$ with rational coefficients whose constant term is an integer. Show that $R$ is an integral domain and that $x$ is a non-unit which cannot be written as a product of irreducibles (in particular, $x$ is not irreducible). Conclude that $R$ is not a UFD.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        $R \subset \mathbb{Q}[x]$. $\mathbb{Q}[x]$ is an integral domain, so that $\mathbb{Q}[x]$ is commutative with identity, and it has no zero divisor. Therefore, $R$ is commutative and it has no zero divisor. Also, because $0,1 \in R$, we know that $R$ is an integral domain.
+        
+        Suppose by contradiction that $x \cdot y = 1$ for some $y \in R$. Then since $\deg y \geq 0$, $\deg x = 1$, and $\deg 1 = 0$, then we cannot have $\deg x + \deg y = \deg 1$. This is a contradiction. Hence, $x$ is not a unit.
+        
+        Suppose by contradiction that $x = f_1 \cdot f_2, \cdot \cdots \cdot f_n$ for some $n$, and $f_1,f_2,\cdots,f_n$ are all irreducible. Then since $1 = \deg x = \deg f_1 + \deg f_2 + \cdots + \deg f_n$ and $\deg f_1,f_2,\cdots,f_n \in \mathbb{Z}_{\geq 0}$, then only one of $\{f_1,f_2,\cdots,f_n\}$ has degree $1$ and all other polynomials will be degree zero (i.e. constants). WLOG, suppose $\deg f_1 = 1$, then let $f_1 = \tfrac{a}{b}x + c$ and $c = 0$ since otherwise, $x$ would have $c\cdot f_2\cdot \cdots \cdot f_n$ as a constant term. Therefore, $f_1 = \tfrac{a}{b}x = \tfrac{x}{bm} \cdot am$ for some $m \in \mathbb{Z}$ such that $am$ is not a unit in $R$. Also, because $\tfrac{x}{bm}$ is not a unit, this contradicts the assumption that $f_1$ is irreducible. Hence $x$ cannot be written as a product of irreducibles. In particular, $x = \tfrac{x}{3} \cdot 3$ and both $\tfrac{x}{3}$ and $3$ are both non-units, so that $x$ is not irreducible. Thus, $R$ is not a U.F.D..
+    \end{proof}
+\end{answer}

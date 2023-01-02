@@ -1,0 +1,31 @@
+\section{Question 1}
+
+\subsection{Part a}
+
+\begin{question}
+    Determine all ideals of the $\operatorname{ring} \mathbf{Z}[x] /\left(2, x^3+1\right)$
+\end{question}
+
+\begin{answer}
+    Notice that $(2)$ is an ideal of $(2,x^3+1)$ and also an ideal of $\mathbb{Z}[x]$. Then, we have $\mathbb{Z}[x]/(2,x^3+1) = (\mathbb{Z}[x]/(2))/((2,x^3+1)/(2)) = (\mathbb{Z}/2\mathbb{Z})[x]/(x^3+1)$. Then, the ideas of $\mathbb{Z}[x]/(2,x^3+1)$ are ideals of $(\mathbb{Z}/2\mathbb{Z})[x]/(x^3+1)$. Also, by the second isomorphism Theorem of rings, we have a correspondence between the ideals of $(\mathbb{Z}/2\mathbb{Z})[x]/(x^3+1)$ and the ideals of $(\mathbb{Z}/2\mathbb{Z})[x]$ containing $(x^3 + 1)$. Then, because $\mathbb{Z}/2\mathbb{Z}$ is a field, then $\mathbb{Z}/2\mathbb{Z}[x]$ is a P.I.D., therefore a U.F.D.. Then, suppose the ideals of $\mathbb{Z}/2\mathbb{Z}[x]$ containing $(x^3+1)$ are in the form of $(f(x))$, then since $(x^3 + 1) \subseteq (f(x))$, then $f(x) \mid x^3 + 1$. Because $1^3+1 = 0$ in $\mathbb{Z}/2\mathbb{Z}$, we can write $x^3 + 1 = (x+1)(x^2+x+1)$. $x+1$ and $x^2+x+1$ are both irreducible, since when $x = 0$ or $x = 1$, they are both nonzero. Because of the condition of U.F.D., we know that all possible $f(x)$ are $1,x+1,x^2+x+1,$ and $x^3+1$. Therefore, the corresponding ideals of $(\mathbb{Z}/2\mathbb{Z})[x]/(x^3+1)$ are $\mathbb{Z}/2\mathbb{Z}[x], x+1+(x^3+1), x^2+x+1+(x^3+1),$ and $(x^3+1)$, and the corresponding ideals of $\mathbb{Z}[x]/(2,x^3+1)$ the isomorphic copies of $\mathbb{Z}/2\mathbb{Z}[x], x+1+(x^3+1), x^2+x+1+(x^3+1),$ and $(x^3+1)$ by the correspondence $\mathbb{Z}[x]/(2,x^3+1) = (\mathbb{Z}/2\mathbb{Z})[x]/(x^3+1)$.
+\end{answer}
+
+\subsection{Part b}
+
+\begin{question}
+    Let $I$ be the ideal $\left(n, x^3+2 x+2\right)$ in $\mathbf{Z}[x]$. For which $n$ with $1 \leq n \leq 7$ is $I$ a maximal ideal?
+\end{question}
+
+\begin{answer}
+
+    If $n = 1$, then $(1,x^3+2x+2) = \mathbb{Z}[x]$. Therefore, $I$ will not be a maximal ideal.
+    
+    If $n = 2$, then $(2,x^3+2x+2) \subseteq (2,x) \subsetneq \mathbb{Z}/2\mathbb{Z}[x]$. Therefore, $I$ will not be a maximal ideal.
+    
+    If $n = 4$, then $(4,x^3+2x+2) \subseteq (2,x) \subsetneq \mathbb{Z}/[x]$. Therefore, $I$ will not be a maximal ideal.
+    
+    If $n = 6$, then $(4,x^3+2x+2) \subseteq (2,x) \subsetneq \mathbb{Z}/[x]$. Therefore, $I$ will not be a maximal ideal.
+    
+    Then for $n$ being a prime number, then $I$ is a maximal ideal of $Z[x]$ if and only if $Z[x]/I$ is a field, and as we showed in Part a, we need $(\mathbb{Z}/n\mathbb{Z})[x]/(x^3+2x+2)$ to be a field, which means $(x^+2x+2)$ is a maximal ideal of $\mathbb{Z}/n\mathbb{Z}[x]$. Also, because $\mathbb{Z}/n\mathbb{Z}$ is a field when $n$ is prime, then $\mathbb{Z}/n\mathbb{Z}[x]$ is a P.I.D.. Hence, if there exists $g \in \mathbb{Z}/n\mathbb{Z}$ such that $g \mid x^3+2x+2$, then $(g) \supset (x^3+2x+2)$, i.e. $(x^3+2x+2)$ is not maximal. Notice that since when $n = 2$, $x^3 + 2x + 2 = x^3$, and $x \mid x^3$, then for $n = 2$, $I$ is not maximal. When $n = 5$, $x+4 \mid x^3+2x+2$, then $I$ is not maximal. When $n = 7$, $x+5 \mid x^3+2x+2$, then $I$ is not maximal. Finally, when $n = 3$, $x^3+2x+2$ is irreducible. Because of P.I.D., we know that $(x^3+2x+2)$ is maximal, so that $I$ is maximal.
+    
+\end{answer}

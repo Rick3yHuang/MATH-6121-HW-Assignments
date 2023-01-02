@@ -1,0 +1,19 @@
+\section{Question 6}
+
+\begin{question}
+    Let $m \geq 2$ be an integer. Show that the polynomial
+    $$
+    f(X, Y)=X^m+Y^m+1
+    $$
+    is irreducible in $\mathbf{C}[X, Y]$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        We will show $f(X,Y)$ is irreducible in $\mathbb{C}[X,Y]$ by showing $f(X,Y)$ is irreducible in $(\mathbb{C}[X])[Y]$ since $\mathbb{C}[X,Y] = (\mathbb{C}[X])[Y]$. We will show this by the Eisenstein Criterion. Let $\xi = e^{\frac{\pi i}{m}}$, then 
+        \begin{equation}\label{eqn:eqn2}
+            X^m + 1 = \prod_{k=0}^{m-1}(X - \xi^{2k+1}).
+        \end{equation}
+        We claim that $X - \xi \mid X^m + 1$ and $(X - \xi)^2 \nmid X^m + 1$. First, since $X^m + 1 = (X - \xi) \prod_{k = 1}^{m-1}(X-\xi^{2k+1})$, and the two factors are non-units (because the units in $\mathbb{C}[X]$ are the nonzero constant terms), then $X-\xi \mid X^m + 1$. Next, since $\mathbb{C}[X]$ is a P.I.D. because $\mathbb{C}$ is a field, then $\mathbb{C}[X]$ is a U.F.D., we could show that $X^m + 1 = \prod_{k=0}^{m-1}(X - \xi^{2k+1})$ is the unique factorization of $X^m + 1$ due that the linear terms in $\mathbb{C}[X]$ are irreducible for the degree reason. Then, if $(X^m + 1)^2$ is a divisor of $X^m + 1$, then it should be a product of factors in the equation \ref{eqn:eqn2} up to the multiplication by units. Hence, $X-\xi$ needs to be a unit. This is a contradiction since the units of $\mathbb{C}[X]$ are the nonzero constants. Therefore, $(X-\xi)^2 \nmid X^m + 1$. Hence, by the Eisenstein Criterion, we know that $f(X,Y)$ is irreducible in $\mathbb{C}[X,Y]$.
+    \end{proof}
+\end{answer}

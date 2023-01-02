@@ -1,0 +1,11 @@
+\section{Question 1}
+
+\begin{question}
+    Let $G$ be a group acting transitively on the finite set $A$. If $|A|>1$, show that there is some $g \in G$ having no fixed points.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        By the Burnside Lemma, we have \# orbits$ = \tfrac{1}{\lvert G \rvert}\cdot \sum_{g \in G}{f(g)}$. Because $G$ acts transitively on the finite set $A$, there is only one orbit, so that $\tfrac{1}{\lvert G \rvert} \cdot \sum_{g \in G}{f(g)} = 1$, which implies $\lvert G \rvert = \sum_{g \in G}{f(g)}$. However, since $e_G$ fixes every elements in the set $A$, then $f(e_G) = \lvert A \rvert$. Assume by contradiction that every $g \in G$ has at least one fixed point. Then, we know that $f(g) \geq 1$ for all \; $g \in G$. Then, $\sum_{g \in G}{f(g)} \geq \lvert G \rvert - 1 + f(e_G) = \lvert G \rvert + \rvert A \rvert - 1 > \lvert G \rvert$ since $\lvert A \rvert > 1$. This contradicts with $\lvert G \rvert = \sum_{g \in G}{f(g)}$. Hence, there is some $g \in G$ having no fixed points.
+    \end{proof}
+\end{answer}

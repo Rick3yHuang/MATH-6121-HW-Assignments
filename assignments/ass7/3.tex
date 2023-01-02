@@ -1,0 +1,19 @@
+\section{Question 3}
+
+\begin{question}
+    If $R$ is an integral domain, prove that
+    $$
+    R=\bigcap_P R_P,
+    $$
+    where $R_P=S^{-1} R$ for $S=R-P$ and the intersection is over all prime ideals $P$ of $R$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        ($\subseteq$): Since $P$ is a prime ideal of $R$, then $1 \notin P$, since then we will have $1 \cdot r = r \in R, \; \forall r \in R$, i.e. $P = R$ otherwise (which contradicts that $P$ is a prime ideal $\Rightarrow$ $P \neq R$). Therefore, $1 \in S = R - P$ since $1 \in R$ because $R$ is an integral domain. Also, from $R$ being an integral domain, we know that $S$ would not have any zero divisor. Then, by Question 2 Part b, there exists ring homomorphisms $j_i: R \to R_{P_i}$ sending $r$ to $[(r,1)]_{\sim}$ for all $P_i$ prime. Also, these homomorphisms are injective which means $R \cong j_i(R)$ and $j_i(R) \subseteq P_i$. Hence, $R$ has isomorphic copies in $P_i$ for all $i$. Hence $R \subseteq \bigcap_P R_P$.
+        
+        ($\supseteq$): By definition, we have $\bigcap_p R_p = \bigcap_P \{[(r,s)]_{\sim} \mid r \in R, s \in R-P\}$. Now, let $[(r,s)]_{\sim} \in \bigcap_p R_p$, we have $s \in R - P$ for all prime ideal $P$. Then, $s \notin P$ for all prime ideal $P$. Suppose $s$ is not a unit, then $(s) \neq R$. However, $(s) \subseteq M$ for some maximal ideal $M$ of $R$. Then, because maximal implies prime, we should have $M = P$ for some prime ideal $P$, this contradicts $s \notin P$. Hence, $s$, must be a unit. Then, we know that there exist some $t$ such that $st = 0$. Then, notice $(t,t) \sim (1,1)$ since $\forall u \in S$, we have $u(t\cdot 1 - 1 \cdot t) = 0$. Hence, $[(t,t)]_{\sim} = [(1,1)]_{\sim}$. Because $[(1,1)]_{\sim}$ is the identity of $R_P$, we have $[(r,s)]_{\sim}[(t,t)]_{\sim} = [(rt, st)]_{\sim} = [(rt,1)]_{\sim}$ which is isomorphic to $rt \in R$ by Question 2 part b. Hence, $\bigcap_P R_P \subseteq R$.
+        
+        In conclusion, we have $R = \bigcap_P R_P$.
+    \end{proof}
+\end{answer}

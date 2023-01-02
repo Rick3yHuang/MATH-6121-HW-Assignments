@@ -1,0 +1,11 @@
+\section{Question 4}
+
+\begin{question}
+    Prove that if $f(x)$ and $g(x)$ are polynomials with rational coefficients whose product has integer coefficients, then the product of any coefficient of $g$ with any coefficient of $f$ is an integer.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $h(x) = f(x)g(x)$. If either one of the $f(x)$ or $g(x)$ is constant, then the result follows immediately, since the the constant times the coefficients of the other one need to be in $\mathbb{Z}$. Then, now assume $f(x)$ and $g(x)$ are non-constants, and therefore non-units. Then, we know that $h(x)$ is reducible in $\mathbb{Q}[x]$. By Gauss's Lemma Version 2, we know that $h(x)$ is also reducible in $\mathbb{Z}[x]$. Then, there exists $d_1,d_2 \in \mathbb{Q}$ such that $h(x) = (d_1f(x))\cdot (d_2g(x))$ and $d_1f(x), d_2g(x) \in \mathbb{Z}[x]$, which means $h(x) = f(x)g(x) = (d_1d_2)\cdot (f(x)g(x))$. Thus, $d_1d_2 = 1$. Let $f(x) = \sum_{i=0}^{n} a_ix^i$ and $g(x) = \sum_{j=1}^{m} b_jx^j$. Then, we have $d_1f(x) = \sum_{i=1}^n d_1a_ix^i \in \mathbb{Z}[x]$ and $d_2g(x) = \sum_{j=1}^m d_2b_jx^j \in \mathbb{Z}[x]$. Hence $\forall i,j$, we have $(d_1a_i)(d_2a_j) \in \mathbb{Z}$, i.e. $(d_1d_2)a_ib_j = a_ib_j \in \mathbb{Z}$.
+    \end{proof}
+\end{answer}

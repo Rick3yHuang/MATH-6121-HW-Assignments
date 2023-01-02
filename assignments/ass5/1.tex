@@ -1,0 +1,32 @@
+\section{Question 1}
+
+\begin{question}
+    Let $G$ be a finitely generated group and let $H$ be a subgroup of finite index in $G$. Prove that $H$ is finitely generated.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Since $G$ is finitely generated, then suppose $G = \langle S \rangle = \langle s_1,s_2,\cdots,s_n \rangle$. Also, since $[G:H] < \infty$. Then suppose $[G:H] = m$, which means $\exists g_1,g_2,\cdots,g_m \in G, s/t \{g_1H,g_2H,\cdots,g_mH\}$ is the set of left cosets of $H$ in $G$. WLOG, let $g_1 = e_G$. Then for all $i \in \{1,2,\cdots n\}$, $j \in \{1,2,\cdots,m\}$, we have $s_ig_j \in G$ since $s_i,g_j \in G$. Because left cosets partition group $G$. Then, $s_i g_j \in gH$ for some $g \in \{g_1,g_2,\cdots,g_m\}$. Denote this $g$ as $g_{ij}$. Thus, there exist some $h_{ij} \in H$ such that $s_i g_j = g_{ij}h_{ij}$. For each $s_ig_j$, we could pick one $h_{ij} \in H$ such that $s_ig_j = g_{ij}h_{ij}$. Since there are finitely many (actually $mn$) of $s_ig_j$, then picked $h_{ij}$'s form a finite set. We claim this finite set of $\{h_{ij}\}$ generates $H$.
+        
+        Let $\langle h_{ij} \rangle$ denotes $\langle h_{11},h_{12},\cdots,h_{1m},h_{21},h_{22},\cdots,h_{nm} \rangle$. It is clear that $\langle h_{ij} \rangle \subseteq H$. Then, the part left now is to prove $H \subseteq \langle h_{ij}\rangle$. Let $h \in H$, then $h \in G$. Thus, $h = s_1^{\alpha_1}s_2^{\alpha_2}\cdots s_n^{\alpha_n}$ for some $\alpha_1,\alpha_2,\cdots,\alpha_n \in \mathbb{Z}$ since $G = \langle S \rangle$. Then, by the relation $s_ig_j = g_{ij}h_{ij}$,
+        \begin{equation}
+            \begin{aligned}
+                    h &= s_1^{\alpha_1}s_2^{\alpha_2}\cdots s_n^{\alpha_n}\\
+                    &= s_1^{\alpha_1}s_2^{\alpha_2}\cdots s_n^{\alpha_n}g_1\\
+                    &= s_1^{\alpha_1}s_2^{\alpha_2}\cdots s_n^{\alpha_n-1}(s_ng_1)\\
+                    &= s_1^{\alpha_1}s_2^{\alpha_2}\cdots s_n^{\alpha_n-1}g_{n1}h_{n1}\\
+                    &= s_1^{\alpha_1}s_2^{\alpha_2}\cdots s_n^{\alpha_n-2}(s_ng_{n1})h_{n1}\\
+                    &= s_1^{\alpha_1}s_2^{\alpha_2}\cdots s_n^{\alpha_n-2}(s_ng_{k_{n1}})h_{n1}\\
+                    &\text{ (because $g_{n1} \in \{g_1,g_2,\cdots,g_m\}$, then let $k_{n1} \in \{1,2,\cdots,m\}$ such that $g_{k_{n1}} = g_{n1}$)}\\
+                    &= s_1^{\alpha_1}s_2^{\alpha_2}\cdots s_n^{\alpha_n-2}g_{nk_{n1}}h_{nk_{n1}}h_{n1}\\
+                    &= s_1^{\alpha_1}s_2^{\alpha_2}\cdots s_n^{\alpha_n-3}(s_ng_{k_{n2}})h_{nk_{n1}}h_{n1}\\
+                    &\text{ (again, because $g_{nk_{n1}} \in \{g_1,g_2,\cdots,g_m\}$, then let $k_{n2} \in \{1,2,\cdots,m\}$ such that $g_{k_{n2}} = g_{nk_{n_1}}$)}\\
+                    &\vdots\\
+                    &= g'h'\\
+                    & \text{ (If we continue doing the procedure above, we would have $g' \in \{g_1,g_2,\cdots,g_m\}$}\\
+                    & \text{  and $h'$ to be some word consisting of $h_{ij}$'s, since $k_{ij} \in \{1,2,\cdots,m\}$)}
+            \end{aligned}
+        \end{equation}
+        Then since $h \in H$, then $g'h' \in H$. However $h' \in H$, then $g' \in H$. Then $g' = g_1 = e_{G}$ because this is the only element $g \in \{g_1,g_2,\cdots,g_m\}$ such that $g \in H$. Therefore, we show that for any arbitrary element in $H$, we could write it as a word only consisting of elements from $\{ h_{ij} \}$. Thus, $H \subseteq \langle h_{ij} \rangle$. Hence, $H = \langle h_{ij} \rangle$. Because $\lvert \{ h_{ij} \} \rvert = mn$, $H$ is finitely generated.
+    \end{proof}
+\end{answer}

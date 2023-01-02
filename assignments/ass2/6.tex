@@ -1,0 +1,11 @@
+\section{Question 6}
+
+\begin{question}
+    Let $K$ be a conjugacy class in $S_n$ consisting of even permutations. Prove that $K$ is either a single conjugacy class in $A_n$ or a union of two conjugacy classes of equal size in $A_n$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        For two arbitrary elements $\tau_1,\tau_2 \in K$, we know there exist a unique $\sigma \in S_n$ such that $\sigma \tau_1 \sigma^{-1} = \tau_2$. If all those $\sigma$ for all $\tau_1,\tau_2 \in K$ are in $A_n$ or not in $A_n$, then we know $K$ is a single cnjugacy class in $A_n$. Otherwise, if there are some $\sigma \in A_4$ while some are not, we could create $\sigma'$ by composite it with a transposition to make those $\sigma \notin A_4$ be in $A_4$. Hence, in this situation, we would have two separate conjugacy classes in $A_4$.
+    \end{proof}
+\end{answer}

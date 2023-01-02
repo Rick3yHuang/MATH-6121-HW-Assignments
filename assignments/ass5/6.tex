@@ -1,0 +1,31 @@
+\section{Question 6}
+
+\begin{question}
+    Let $R$ be a ring such that $x^2=x$ for all $x \in R$. Prove that $R$ is commutative.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $x,y \in R$, then by $x^2 = x$ for all $x \in R$:
+        \begin{equation}
+            \begin{aligned}
+                x+y &= (x+y)^2\\
+                &= (x+y)(x+y) = xx + xy + yx + yy\\
+                &= x + xy + yx + y
+            \end{aligned}
+        \end{equation}
+        Thus, $x + y = x + y + xy + yx \Rightarrow xy + yx = 0$.
+        
+        Again by idempotent property:
+        \begin{equation}
+            \begin{aligned}
+                yx + yx &= (yx + yx)^2\\
+                &= (yx + yx)(yx + yx)\\
+                &= yxyx + yxyx + yxyx +yxyx\\
+                &= (yx)^2 + (yx)^2 + (yx)^2 + (yx)^2\\
+                &= yx + yx + yx + yx
+            \end{aligned}
+        \end{equation}
+        Therefore, $yx + yx = yx + yx + yx + yx \Rightarrow yx + yx = 0$. Hence, $xy + yx = 0 = yx + yx \Rightarrow xy = yx$. Because, we picked $x$ and $y$ arbitrarily, $xy = yx, \, \forall x, y \in R$. Thus, $R$ is commutative.
+    \end{proof}
+\end{answer}

@@ -1,0 +1,41 @@
+\section{Question 7}
+
+\begin{question}
+    Let $\mathbb{S}^1$ denote the complex unit circle $\{z \in \mathbb{C}:|z|=1\}$. Prove that $\mathbb{C}^{\times} / \mathbb{S}^1 \cong \mathbb{R}_{>0}$, where $\mathbb{R}_{>0}$ denotes the group of positive real numbers together with multiplication.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Define a function
+        \begin{equation}
+            \begin{aligned}
+                \varphi: \mathbb{C}^{\times} &\to \mathbb{R}_{>0}\\
+                c &\mapsto \lvert c \rvert\\
+            \end{aligned}
+        \end{equation}
+        This is a well-defined function since for $c_1=c_2 \in \mathbb{C}^{\times}$, we have $\lvert c_1 \rvert = \lvert c_2 \rvert$ by the property of the norm of the complex numbers. Then, let $c_1 = a + bi$ and $c_2 = c + di$ for some $a,b,c,d \in \mathbb{R}$. Then,
+        \begin{equation}
+            \begin{aligned}
+                \varphi(c_1c_2) &= \varphi((a+bi)(c+di))\\
+                &= \varphi((ac-bd)+(ad+bc)i)\\
+                &= (ac-bd)^2+(ad+bc)^2\\
+                &= a^2c^2 - abcd + b^2d^2 + a^2d^2 + abcd +b^2c^2\\
+                &= a^2c^2 + b^2d^2 + a^2d^2 +b^2c^2\\
+                &= a^2(c^2d^2) + b^2(c^2+d^2)\\
+                &= (a^2+b^2)(c^2+d^2)\\
+                &= \varphi(a+bi)\varphi(c+di)\\
+                &= \varphi(c_1)\varphi(c_2).
+            \end{aligned}
+        \end{equation}
+        Therefore, we know that $\varphi$ is a homomorphism. Also, we can show that $\varphi$ is an onto homomorphism since $\mathbb{C}^{\times}$ has a copy of $\mathbb{R}_{>0}$ in it and their norms are themselves.
+        
+        The kernel of $\varphi$ is $\ker \varphi = \{c \lvert \lvert c \rvert = 1\} = \mathbb{S}^{1}$. Thus, by the First Isomorphism Theorem, we know that there exist an isomorphism $\varphi^{'}: \mathbb{C}^{\times}/\mathbb{S}^{1} \to \mathbb{R}_{>0}$ that makes the diagram below commutes.
+        \begin{equation}\label{eqn:1}
+        \xymatrix@C=3pc@R=4pc{
+            \mathbb{C}^{\times}\ar[d]_{\pi}\ar@{->>}[r]^{\varphi}&\mathbb{R}_{>0}\\
+            \mathbb{C}^{\times}/\mathbb{S}^{1}\ar[ur]_{\varphi^{'}}&
+        }
+        \end{equation}
+        Therefore, we have $\mathbb{C}^{\times}/\mathbb{S}^{1}$.
+    \end{proof}
+\end{answer}

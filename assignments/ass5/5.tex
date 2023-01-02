@@ -1,0 +1,99 @@
+\section{Question 5}
+
+\begin{question}
+    For any group $G$, define its \textit{dual group} $\hat{G}$ to be the set of all homomorphisms from $G$ into $\mathbb{C}^*$, together with the binary operation of pointwise multiplication of functions.
+\end{question}
+
+\subsection{Part a}
+
+\begin{question}
+    Show that this binary operation makes $\hat{G}$ into an abelian group.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $f,g \in \hat{G}$. By the definition of pointwise multiplication of functions (I denote this as $\star$), we have $(f\star g)(a) = f(a)\cdot g(a) \; \forall a \in G$. Because $f(a),g(a) \in \mathbb{C}^{*}$ and $\mathbb{C}^{*}$ is abelian, then $(f\star g)(a) = g(a) \cdot f(a) = (g \star f)(a) \; \forall a\in G$. Because we pick $f,g \in \hat{G}$ arbitrarily, $\hat{G}$ is abelian.
+    \end{proof}
+\end{answer}
+
+\subsection{Part b}
+
+\begin{question}
+    If $G$ is a finite abelian group, prove that $\hat{G} \cong G$. $[$ Hint: If $G \cong$ $\left\langle x_1\right\rangle \times \cdots \times\left\langle x_r\right\rangle$ with $x_i$ of order $n_i$, show that $\hat{G} \cong\left\langle\chi_1\right\rangle \times \cdots \times\left\langle\chi_r\right\rangle$, where $\chi_i$ sends $x_i$ to $e^{\frac{2 \pi i}{n_i}}$ and $x_j$ to 1 for $j \neq i$.] Thus every finite abelian group is self-dual. Note, however, that there is no natural isomorphism between $G$ and its dual (the isomorphism depends on a choice of a set of generators for $G)$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Since $G$ is finite abelian, then there exist $x_1,\cdots,x_r$ such that $G \cong \left\langle x_1\right\rangle \times \cdots \times\left\langle x_r\right\rangle$ with $x_i$ of order $n_i$. Let $\chi_i$ sends $x_i$ to $e^{\frac{2 \pi i}{n_i}}$ and $x_j$ to 1 for $j \neq i$.
+        
+        Then, Define a map
+        \begin{equation}
+            \begin{aligned}
+                \Phi: \langle \chi_1 \rangle \times \cdots \langle \chi_r \rangle &\to \hat{G}\\
+                \prod_{i = 1}^r(id,\cdots, \chi_i^{\alpha_i}, \cdots, id) &\mapsto \prod_{i = 1}^r \chi_i^{\alpha_i} \text{ for some $\alpha_i \in \{0,\cdots,n_i-1\}$}
+            \end{aligned}
+        \end{equation}
+    
+        We will show this map is an isomorphism.
+
+        First, let $\prod_{i = 1}^r(id,\cdots, \chi_i^{\alpha_i}, \cdots, id) = \prod_{i = 1}^r(id,\cdots, \chi_i^{\alpha_i+n_i}, \cdots, id) \in \langle \chi_1 \rangle \times \cdots \langle \chi_r \rangle$, then we have 
+        \begin{equation}
+            \Phi\left(\prod_{i = 1}^r(id,\cdots, \chi_i^{\alpha_i}, \cdots, id)\right) = \prod_{i = 1}^r \chi_i^{\alpha_i} = \prod_{i = 1}^r \chi_i^{\alpha_i+n_1} = \Phi\left(\prod_{i = 1}^r(id,\cdots, \chi_i^{\alpha_i+n_i}, \cdots, id)\right)
+        \end{equation}
+        Thus, $\Phi$ is a well-defined function.
+        
+        Second, Let $\prod_{i = 1}^r(id,\cdots, \chi_i^{\alpha_i}, \cdots, id),\prod_{i = 1}^r(id,\cdots, \chi_i^{\beta_i}, \cdots, id) \in \langle \chi_1 \rangle \times \cdots \langle \chi_r \rangle$ and $\prod_{i = 1}^{r}(e_G,\cdots,x_i,\cdots,e_G) \in \left\langle x_1\right\rangle \times \cdots \times\left\langle x_r\right\rangle \cong G$. Then,
+        \begin{equation}
+            \begin{aligned}
+                &\Phi\left(\prod_{i = 1}^r(id,\cdots, \chi_i^{\alpha_i}, \cdots, id)\cdot\prod_{i = 1}^r(id,\cdots, \chi_i^{\beta_i}, \cdots, id)\right)\left(\prod_{j = 1}^{r}(e_G,\cdots,x_j^{\gamma_j},\cdots,e_G)\right)\\
+                = &\Phi\left(\prod_{i = 1}^r(id,\cdots, \chi_i^{\alpha_i+\beta_i}, \cdots, id)\right)\left(\prod_{j = 1}^{r}(e_G,\cdots,x_j^{\gamma_j},\cdots,e_G)\right)\\
+                = &\prod_{i = 1}^r\chi_i^{\alpha_i+\beta_i}\left(\prod_{j = 1}^{r}(e_G,\cdots,x_j^{\gamma_j},\cdots,e_G)\right)\\
+                = &\prod_{j = 1}^{r}\left(\prod_{i = 1}^r\chi_i^{\alpha_i+\beta_i}(e_G),\cdots,\prod_{i = 1}^r\chi_i^{\alpha_i+\beta_i}(x_j^{\gamma_j}),\cdots,\prod_{i = 1}^r\chi_i^{\alpha_i+\beta_i}(e_G)\right)\\
+                = &\prod_{j = 1}^{r}\left(e_G,\cdots,\prod_{i = 1}^r\chi_i^{\alpha_i+\beta_i}(x_j^{\gamma_j}),\cdots,e_G\right)\\
+                = &\prod_{j = 1}^{r}\left(e_G,\cdots,\prod_{i = 1}^r\chi_i^{\alpha_i}(x_j^{\gamma_j}),\cdots,e_G\right)\cdot \prod_{j = 1}^{r}\left(e_G,\cdots,\prod_{i = 1}^r\chi_i^{\beta_i}(x_j^{\gamma_j}),\cdots,e_G\right)\\
+                = &\prod_{i = 1}^r\chi_i^{\alpha_i}\left(\prod_{j = 1}^{r}(e_G,\cdots,x_j^{\gamma_j},\cdots,e_G)\right) \cdot \prod_{i = 1}^r\chi_i^{\beta_i}\left(\prod_{j = 1}^{r}(e_G,\cdots,x_j^{\gamma_j},\cdots,e_G)\right)\\
+                = &\Phi\left(\prod_{i = 1}^r(id,\cdots, \chi_i^{\alpha_i}, \cdots, id)\right)\left(\prod_{j = 1}^{r}(e_G,\cdots,x_j^{\gamma_j},\cdots,e_G)\right) \cdot \Phi\left(\prod_{i = 1}^r(id,\cdots, \chi_i^{\beta_i}, \cdots, id)\right)\left(\prod_{j = 1}^{r}(e_G,\cdots,x_j^{\gamma_j},\cdots,e_G)\right)
+            \end{aligned}
+        \end{equation}
+        This shows that $\Phi$ is a homomorphism.
+        
+        Next, let $\sigma \in \hat{G}$, then, we have $e_G = \sigma(e_{G}) = \sigma(x_i^{n_i}) = \sigma(x_i)^{n_i}$ because $\sigma$ is a homomorphism. Therefore, let $\xi_i = e^{\frac{2\pi i}{n_i}}$, $\sigma(x_i) = \xi_i^{k_i}$ for some $k_i \in \{0,1,2,\cdots,n_{i-1}\}$.
+        
+        Third, let $\tau \in \hat{G}$, then,
+        \begin{equation}
+            \begin{aligned}
+                &\tau\left(\prod_{j = 1}^{r}(e_G,\cdots,x_j^{\gamma_j},\cdots,e_G)\right)\\
+                = &\left(\prod_{j = 1}^{r}(\tau(e_G),\cdots,\tau(x_j^{\gamma_j}),\cdots,\tau(e_G))\right)\\
+                = &\left(\prod_{j = 1}^{r}(e_G,\cdots,\tau(x_j)^{\gamma_j},\cdots,e_G)\right)\\
+                = &\left(\prod_{j = 1}^{r}(e_G,\cdots,(\xi_j^{k_j})^{\gamma_j},\cdots,e_G)\right)\\
+                = &\left(\prod_{j = 1}^{r}(e_G,\cdots,((\chi_j(x_j))^{k_j})^{\gamma_j},\cdots,e_G)\right)\\
+                = &\left(\prod_{j = 1}^{r}(e_G,\cdots,((\chi_j^{k_j}(x_j)))^{\gamma_j},\cdots,e_G)\right)\\
+                = &\left(\prod_{j = 1}^{r}(e_G,\cdots,\chi_j^{k_j}(x_j^{\gamma_j}),\cdots,e_G)\right)\\
+                = &\left(\prod_{j = 1}^{r}(\chi_j^{k_j}(e_G),\cdots,\chi_j^{k_j}(x_j^{\gamma_j}),\cdots,\chi_j^{k_j}(e_G))\right)\\
+                = &\left(\prod_{i=1}^{r}\chi_i^{k_i}\right)\left(\prod_{j = 1}^{r}(e_G,\cdots,x_j^{\gamma_j},\cdots,e_G)\right)\\
+            \end{aligned}
+        \end{equation}
+        Therefore, $\forall \tau \in \hat{G}$, we have $\tau = \prod_{i = 1}^r\chi_i^{k_i}$ and $\exists \, \prod_{i = 1}^{r}(id,\cdots,\chi_i^{k_i},\cdots,id)$ such that 
+        $$\Phi\left(\prod_{i = 1}^{r}(id,\cdots,\chi_i^{k_i},\cdots,id)\right) = \prod_{i = 1}^r\chi_i^{k_i} = \tau$$.
+        
+        Eventually, Let $\prod_{i = 1}^r(id,\cdots, \chi_i^{\alpha_i}, \cdots, id),\prod_{i = 1}^r(id,\cdots, \chi_i^{\beta_i}, \cdots, id) \in \langle \chi_1 \rangle \times \cdots \langle \chi_r \rangle$ such that $$\Phi\left(\prod_{i = 1}^r(id,\cdots, \chi_i^{\alpha_i}, \cdots, id)\right) = \Phi\left(\prod_{i = 1}^r(id,\cdots, \chi_i^{\beta_i}, \cdots, id)\right)$$ and $g \in G$.
+        
+        Then, because
+        \begin{equation}
+            \begin{aligned}
+                &\Phi\left(\prod_{i = 1}^r(id,\cdots, \chi_i^{\alpha_i}, \cdots, id)\right) = \Phi\left(\prod_{i = 1}^r(id,\cdots, \chi_i^{\beta_i}, \cdots, id)\right)\\
+                \Rightarrow &\prod_{i = 1}^r\chi_i^{\alpha_i}(g) = \prod_{i = 1}^r\chi_i^{\beta_i}(g)\\
+                \Rightarrow &\prod_{i = 1}^r\chi_i^{\alpha_i}\left(\prod_{j = 1}^{r}(e_G,\cdots,x_j^{\gamma_j},\cdots,e_G)\right) = \prod_{i = 1}^r\chi_i^{\beta_i}\left(\prod_{j = 1}^{r}(e_G,\cdots,x_j^{\gamma_j},\cdots,e_G)\right)\\
+                \Rightarrow &\prod_{j = 1}^{r}\left(\prod_{i = 1}^r\chi_i^{\alpha_i}(e_G),\cdots,\prod_{i = 1}^r\chi_i^{\alpha_i}(x_j^{\gamma_j}),\cdots,\prod_{i = 1}^r\chi_i^{\alpha_i}(e_G)\right) = \prod_{j = 1}^{r}\left(\prod_{i = 1}^r\chi_i^{\beta_i}(e_G),\cdots,\prod_{i = 1}^r\chi_i^{\beta_i}(x_j^{\gamma_j}),\cdots,\prod_{i = 1}^r\chi_i^{\beta_i}(e_G)\right)\\
+                \Rightarrow &\prod_{j = 1}^{r}\left(e_G,\cdots,\prod_{i = 1}^r\chi_i^{\alpha_i}(x_j^{\gamma_j}),\cdots,e_G\right) = \prod_{j = 1}^{r}\left(e_G,\cdots,\prod_{i = 1}^r\chi_i^{\beta_i}(x_j^{\gamma_j}),\cdots,e_G\right)\\
+                \Rightarrow &\prod_{i = 1}^{r}\left(e_G,\cdots,\chi_i^{\alpha_i}(g),\cdots,e_G\right) = \prod_{i = 1}^{r}\left(e_G,\cdots,\chi_i^{\beta_i}(g),\cdots,e_G\right)\\
+                \Rightarrow &\prod_{i = 1}^{r}\left(id(g),\cdots,\chi_i^{\alpha_i}(g),\cdots,id(g)\right) = \prod_{i = 1}^{r}\left(id(g),\cdots,\chi_i^{\beta_i}(g),\cdots,id(g)\right)\\
+                \Rightarrow &\prod_{i = 1}^{r}\left(id,\cdots,\chi_i^{\alpha_i},\cdots,id\right)(g) = \prod_{i = 1}^{r}\left(id,\cdots,\chi_i^{\beta_i},\cdots,id\right)(g)\\
+                \Rightarrow &\prod_{i = 1}^{r}\left(id,\cdots,\chi_i^{\alpha_i},\cdots,id\right) = \prod_{i = 1}^{r}\left(id,\cdots,\chi_i^{\beta_i},\cdots,id\right)
+            \end{aligned}
+        \end{equation}
+        $\Phi$ is injective. Hence, we show that $\Phi$ is an isomorphism.
+        
+        Then $\hat{G} \cong \chi_1 \rangle \times \cdots \langle \chi_r \rangle$, and because $\lvert \chi_i \rvert = n_i \lvert x_i \rvert$ for all $i$ and $G$ is finite and abelian, we have $\hat{G} \cong \chi_1 \rangle \times \cdots \langle \chi_r \rangle \cong \left\langle x_1\right\rangle \times \cdots \times\left\langle x_r\right\rangle \cong G$. Thus, $\hat{G} \cong G$. Hence finite abelian groups are self-dual.
+    \end{proof}
+\end{answer}

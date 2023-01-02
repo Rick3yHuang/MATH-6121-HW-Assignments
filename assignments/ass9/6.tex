@@ -1,0 +1,176 @@
+\section{Question 6}
+
+\begin{question}
+    Use Theorem 21 in Section 12.2. of Dummit and Foote, together with either Exercise 19 in Section $12.1$ or Exercise 35 in Section $12.3$ (which you may assume without proof), to compute the Smith Normal form of $x I-A$ for the $4 \times 4$ matrix $A$ over $\mathbb{Q}$ given by
+    $$
+    A=\left(\begin{array}{llll}
+    0 & 1 & 1 & 1 \\
+    1 & 0 & 1 & 1 \\
+    1 & 1 & 0 & 1 \\
+    1 & 1 & 1 & 0
+    \end{array}\right)
+    $$
+    Use this to determine the rational and Jordan canonical forms for $A$.
+\end{question}
+
+\begin{answer}
+    We can compute $xI - A$ and do the row and column operations to it:
+    \begin{equation}
+        \begin{aligned}
+            &\left[
+            \begin{matrix}
+            x & -1 & -1 & -1 \\
+            -1 & x & -1 & -1 \\
+            -1 & -1 & x & -1 \\
+            -1 & -1 & -1 & x
+            \end{matrix}
+            \right] \xrightarrow{C_1 \mapsto C_2,\, C_2 \mapsto C_1}
+            \left[
+            \begin{matrix}
+            -1 & x & -1 & -1 \\
+            x & -1 & -1 & -1 \\
+            -1 & -1 & x & -1 \\
+            -1 & -1 & -1 & x
+            \end{matrix}
+            \right] \xrightarrow{-R_1 \mapsto R_1}
+            \left[
+            \begin{matrix}
+            1 & -x & 1 & 1 \\
+            x & -1 & -1 & -1 \\
+            -1 & -1 & x & -1 \\
+            -1 & -1 & -1 & x
+            \end{matrix}
+            \right]\\
+            &\xrightarrow{R_2-x\cdot R_1 \mapsto R_2}
+            \left[
+            \begin{matrix}
+            1 & -x & 1 & 1 \\
+            0 & x^2-1 & -x-1 & -x-1 \\
+            -1 & -1 & x & -1 \\
+            -1 & -1 & -1 & x
+            \end{matrix}
+            \right]\xrightarrow{R_3+R_1 \mapsto R_3}
+            \left[
+            \begin{matrix}
+            1 & -x & 1 & 1 \\
+            0 & x^2-1 & -x-1 & -x-1 \\
+            0 & -x-1 & x+1 & 0 \\
+            -1 & -1 & -1 & x
+            \end{matrix}
+            \right]\\
+            &\xrightarrow{R_4+R_1 \mapsto R_4}
+            \left[
+            \begin{matrix}
+            1 & -x & 1 & 1 \\
+            0 & x^2-1 & -x-1 & -x-1 \\
+            0 & -x-1 & x+1 & 0 \\
+            0 & -x-1 & 0 & x+1
+            \end{matrix}
+            \right]\xrightarrow{C_2+x\cdot C_1 \mapsto C_2}
+            \left[
+            \begin{matrix}
+            1 & 0 & 1 & 1 \\
+            0 & x^2-1 & -x-1 & -x-1 \\
+            0 & -x-1 & x+1 & 0 \\
+            0 & -x-1 & 0 & x+1
+            \end{matrix}
+            \right]\\
+            &\xrightarrow{C_3-\cdot C_1 \mapsto C_3}
+            \left[
+            \begin{matrix}
+            1 & 0 & 0 & 1 \\
+            0 & x^2-1 & -x-1 & -x-1 \\
+            0 & -x-1 & x+1 & 0 \\
+            0 & -x-1 & 0 & x+1
+            \end{matrix}
+            \right]\xrightarrow{C_4-\cdot C_1 \mapsto C_4}
+            \left[
+            \begin{matrix}
+            1 & 0 & 0 & 0 \\
+            0 & x^2-1 & -x-1 & -x-1 \\
+            0 & -x-1 & x+1 & 0 \\
+            0 & -x-1 & 0 & x+1
+            \end{matrix}
+            \right]\\
+            &\xrightarrow{R_2 \mapsto R_3, \, R_3 \mapsto R_2}
+            \left[
+            \begin{matrix}
+            1 & 0 & 0 & 0 \\
+            0 & -x-1 & x+1 & 0 \\
+            0 & x^2-1 & -x-1 & -x-1 \\
+            0 & -x-1 & 0 & x+1
+            \end{matrix}
+            \right]\xrightarrow{R_3 - (-x+1)\cdot R_2 \mapsto R_3}
+            \left[
+            \begin{matrix}
+            1 & 0 & 0 & 0 \\
+            0 & -x-1 & x+1 & 0 \\
+            0 & 0 & x^2+x & -x-1 \\
+            0 & -x-1 & 0 & x+1
+            \end{matrix}
+            \right]\\
+            &\xrightarrow{R_4-R_1 \mapsto R_4}
+            \left[
+            \begin{matrix}
+            1 & 0 & 0 & 0 \\
+            0 & -x-1 & x+1 & 0 \\
+            0 & 0 & x^2+x & -x-1 \\
+            0 & 0 & -x-1 & 2x+2
+            \end{matrix}
+            \right]\xrightarrow{C_3+C_2 \mapsto C_3}
+            \left[
+            \begin{matrix}
+            1 & 0 & 0 & 0 \\
+            0 & -x-1 & 0 & 0 \\
+            0 & 0 & x^2+x & -x-1 \\
+            0 & 0 & -x-1 & 2x+2
+            \end{matrix}
+            \right]\\
+            &\xrightarrow{R_3 \mapsto R_4,\, R_4 \mapsto R_3}
+            \left[
+            \begin{matrix}
+            1 & 0 & 0 & 0 \\
+            0 & -x-1 & 0 & 0 \\
+            0 & 0 & -x-1 & 2x+2 \\
+            0 & 0 & x^2+x & -x-1
+            \end{matrix}
+            \right]\xrightarrow{R_4 +x \cdot R_3 \mapsto R_4}
+            \left[
+            \begin{matrix}
+            1 & 0 & 0 & 0 \\
+            0 & -x-1 & 0 & 0 \\
+            0 & 0 & -x-1 & 2x+2 \\
+            0 & 0 & 0 & 2x^2+x-1
+            \end{matrix}
+            \right]\\
+            &\xrightarrow{C_4+2\cdot C_3 \mapsto C_4}
+            \left[
+            \begin{matrix}
+            1 & 0 & 0 & 0 \\
+            0 & -x-1 & 0 & 0 \\
+            0 & 0 & -x-1 & 0 \\
+            0 & 0 & 0 & 2x^2+x-1
+            \end{matrix}
+            \right]\xrightarrow{-R_2 \mapsto R_2,\, -R_3 \mapsto R_3}
+            \left[
+            \begin{matrix}
+            1 & 0 & 0 & 0 \\
+            0 & x+1 & 0 & 0 \\
+            0 & 0 & x+1 & 0 \\
+            0 & 0 & 0 & 2x^2+x-1
+            \end{matrix}
+            \right]
+        \end{aligned}
+    \end{equation}
+    Thus, the invariant factors are $x+1,\,x+1,\,2x^2 + x - 1$, so that the rational canonical form is:
+    \begin{equation}
+        \left[
+            \begin{matrix}
+            1 & 0 & 0 & 0 \\
+            0 & 1 & 0 & 0 \\
+            0 & 0 & 0 & 1 \\
+            0 & 0 & 1 & -1
+            \end{matrix}
+            \right]
+    \end{equation}
+\end{answer}

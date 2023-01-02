@@ -1,0 +1,86 @@
+\section{Question 3}
+
+\begin{question}
+    The \textit{center} of a group $G$ is the subgroup $Z(G)$ consisting of all elements which commute with every element of $G$.
+\end{question}
+
+\subsection{Part (a)}
+
+\begin{question}
+    If $n$ is odd and $n \geq 3$, show that the center of $D_{2n}$ is trivial (i.e., has order $1$).
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Using the notation $D_{2n} = \langle \sigma, \tau \lvert \sigma^n = \tau^2 = e, \text{ and } \sigma\tau = \tau\sigma^{-1}\rangle$.
+    
+        Suppose by contradiction that $\exists \sigma^k \in D_{2n}$ for some $k \in \mathbb{Z}^{+}$ and $k < n$ such that $\sigma^k x = x \sigma^k,\; \forall x \in D_{2n}$. Then, we know $\sigma^k \tau = \tau \sigma^k$. However, we have
+        \begin{equation}
+            \begin{aligned}
+                \sigma^k\tau &= \sigma^{k-1}\tau\sigma^{-1}\\
+                &= \sigma^{k-2}\tau\sigma^{-2}\\
+                &= \sigma^{k-3}\tau\sigma^{-3}\\
+                &\cdots\\
+                &= \sigma\tau\sigma^{-(k-1)}\\
+                &= \tau\sigma^{-k}
+            \end{aligned}
+        \end{equation}
+        Thus, $\tau\sigma^k = \sigma^k\tau = \tau\sigma^{-k}$. Left-multiplying $\tau^{-1}$, we have $\sigma^k = \sigma^{-k}$. Therefore, $\tfrac{\sigma^k}{\sigma^{-k}} = \sigma^2k = e$, which implies $n \lvert 2k$. However, $k < n$ and $n \nmid 2$, then the only possible $k$ need to satisfy $k = \tfrac{n}{2}$. Because $n$ is odd, then $\tfrac{n}{2}$ is not an integer. therefore, there is not such $k$ that satisfies $\tau\sigma^k = \tau\sigma^{-k}$. Thus, none of rotations $\sigma^k$ is in the $Z(D_{2n})$.
+        
+        Again, suppose by contradiction that $\exists \sigma^k\tau \in D_{2n}$ for some $k \in \mathbb{Z}_{\geq 0}$ and $k < n$ such that $\sigma^k\tau x = x \sigma^k\tau, \; \forall x \in D_{2n}$. Then, we have $\sigma^k\tau\tau = \sigma^k\tau^2 = \sigma^k = \tau\sigma^k\tau$. However, we have
+        \begin{equation}
+            \begin{aligned}
+                \tau\sigma^k\tau &= \tau\sigma^{k-1}\sigma\tau\\
+                &= \tau\sigma^{k-1}\tau\sigma^{-1}\\
+                &= \tau\sigma^{k-2}\tau\sigma^{-2}\\
+                &= \tau\sigma^{k-3}\tau\sigma^{-3}\\
+                &\cdots\\
+                &= \tau\sigma\tau\sigma^{-(k-1)}\\
+                &= \tau\tau\sigma^{-k}\\
+                &= \sigma^{-k}
+            \end{aligned}
+        \end{equation}
+        Therefore, we have $\sigma^k = \tau\sigma^k\tau = \sigma^{-k}$. Then, similarly, we have $n \lvert 2k$. Thus, we know this is a contradiction since $n$ is odd. Then, none of the reflections $\sigma^k\tau$ is in $Z(D_{2n})$.
+        
+        Thus, $Z(S_{2n}) = \{e\}$, which is trivial.
+    \end{proof}
+\end{answer}
+
+\subsection{Part (b)}
+
+\begin{question}
+    If $n$ is even and $n \geq 4$, show that the center of $D_{2n}$ has order $2$
+\end{question}
+
+\begin{answer}
+    For a rotation $\sigma^k \in D_{2n}$ where $k \in \mathbb{Z}^+$ and $k < n$, we must have $\sigma^k \sigma^m\tau = \sigma^m\tau\sigma^k$ for some $m \in \mathbb{Z}_{\geq 0}$ and $m < n$. Therefore, $\sigma^k\tau = \tau\sigma^k$. Then, as we proved in Part (a), we know that $k$ need to be equal to $\tfrac{n}{2}$. Because $n$ is even this time, so such $k = \tfrac{n}{2}$ exists. Therefore, $\sigma^{\tfrac{n}{2}}$ commutes with all reflections, and since $\sigma^{\tfrac{n}{2}}\sigma^m = \sigma^{\tfrac{n}{2}+m} = \sigma^m\sigma^{\tfrac{n}{2}}$ for all $m \in \mathbb{Z}^+$ and $m < n$, we know $\sigma^{\tfrac{n}{2}}$ commutes with all rotations. Hence, it commutes with all elements in $D_{2n}$, so $\sigma^{\tfrac{n}{2}} \in Z(D_{2n})$.
+    
+    Suppose $\exists \sigma^k\tau \in D_{2n}$ for some $k \in \mathbb{Z}_{\geq 0}$ and $k < n$ such that $\sigma^k\tau x = x \sigma^k\tau, \; \forall x \in D_{2n}$. Then, we have $\sigma^k\tau\sigma = \sigma\sigma^k\tau = \sigma^{k+1}\tau$. However, we have
+        \begin{equation}
+            \begin{aligned}
+                \sigma^k\tau\sigma &= \sigma^{k-1}\sigma\tau\sigma\\
+                &= \sigma^{k-1}\tau\sigma^{-1}\sigma\\
+                &= \sigma^{k-1}\tau\\
+                &= \sigma^{k-2}\tau\sigma^{-1}\\
+                &= \sigma^{k-3}\tau\sigma^{-2}\\
+                &\cdots\\
+                &= \sigma\tau\sigma^{-(k-2)}\\
+                &= \tau\sigma^{-(k-1)}
+            \end{aligned}
+        \end{equation}
+        and 
+        \begin{equation}
+            \begin{aligned}
+                \sigma^{k+1}\tau &= \sigma^k\sigma\tau\\
+                &= \sigma^k\tau\sigma^{-1}\\
+                &= \sigma^{k-1}\tau\sigma^{-2}\\
+                &= \sigma^{k-2}\tau\sigma^{-3}\\
+                &\cdots\\
+                &= \sigma\tau\sigma^{-k}\\
+                &= \tau\sigma^{-(k+1)}\\
+            \end{aligned}
+        \end{equation}
+        Therefore, we have $\tau\sigma^{-(k-1)} = \sigma^k\tau\sigma = \sigma^{k+1}\tau = \tau\sigma^{-(k+1)}$, which implies $\sigma^{-(k-1)} = \sigma^{-(k+1)}$, and $\sigma^{-(k-1)+(k+1)} = \sigma^2 = e$. This is a contradiction, since $n \geq 4$. Thus, none of reflections is in $Z(D_{2n})$.
+        
+        Hence, $Z(D_{2n}) = \{e,\sigma^{\tfrac{n}{2}}\}$, and $\lvert Z(D_{2n})\rvert = 2$.
+\end{answer}

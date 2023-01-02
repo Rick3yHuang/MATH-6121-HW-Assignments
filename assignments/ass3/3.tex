@@ -1,0 +1,21 @@
+\section{Question 3}
+
+\begin{question}
+    What is the probability that two randomly chosen elements of the symmetric group $S_n$ commute with another? [\textbf{Hint}: Your answer should involve the partition function $p(n) .]$
+\end{question}
+
+\begin{answer}
+    Consider the action of $S_n$ on $S_n$ by conjugation. Let $\sigma \in S_n$, then it commutes only with the elements $\tau \in {S_n}_{\sigma}$. Thus, the probability is
+    \begin{equation}
+        \begin{aligned}
+            P\left(\parbox{11.5em}{two randomly chosen elements of $S_n$commute with another}\right) &= \dfrac{\text{two elements commute}}{\lvert S_n\rvert^2}\\
+            &= \dfrac{\sum_{\sigma \in S_n}{\lvert {S_n}_\sigma \rvert}}{\lvert S_n\rvert^2}\\
+            &= \dfrac{\sum_{\sigma \in S_n}{\frac{\lvert S_n \rvert}{\lvert S_n.\sigma\rvert}}}{\lvert S_n \rvert^2} \text{ (by the O-S Theorem)}\\
+            &=  \dfrac{\lvert S_n \rvert\sum_{\sigma \in S_n}{\frac{1}{\lvert S_n.\sigma\rvert}}}{\lvert S_n \rvert^2}\\
+            &=  \dfrac{\sum_{\sigma \in S_n}{\frac{1}{\lvert S_n.\sigma\rvert}}}{\lvert S_n \rvert}\\
+            &= \dfrac{\text{\# of orbits}}{\lvert S_n \rvert}\\
+            &\parbox{22em}{(For $S_n$, the number of orbits are the number of the cycle types (i.e. the number of partitions))}\\
+            &= \dfrac{p(n)}{n!}
+        \end{aligned}
+    \end{equation}
+\end{answer}

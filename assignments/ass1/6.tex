@@ -1,0 +1,26 @@
+\section{Question 6}
+
+\begin{question}
+    Prove that $S_4$ does not have a normal subgroup of order 8 or a normal subgroup of order $3$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Two permutations are conjugate to each other if and only if they have the same cycle type since we are always able to find a permutation relabeling the elements in one permutation to the other one with out changing the cycle type. In particular, conjugating using this element give the conjugating relation between the two permutations. Thus, Suppose that there is a normal subgroup of $S_4$, $H$ such that $\lvert H \rvert = 8$. Then if $\tau \in H$, every permutations in $S_4$ that have the same cycle type should also be in $H$, because $\sigma \tau \sigma^{-1} \in H$. This shows that $H$ should be the union of sets of permutations with the same cycle type. However the numbers of permutations of each cycle type are listed as the follows:
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|c|c|}
+            \hline
+            \textbf{cycle type} & \textbf{number of permutations} \\ \hline
+            1-cycle             & 1                               \\ \hline
+            2-cycle             & 6                               \\ \hline
+            3-cycle             & 8                               \\ \hline
+            4-cycle             & 6                               \\ \hline
+            (2,2)-cycle         & 3                               \\ \hline
+            \end{tabular}
+            \caption{Cycle types of $S_4$}
+            \label{tab:tab1}
+        \end{table}
+        From this table we know that there is no union of sets of permutations from above have $8$ permutations in total. Thus, there is no normal subgroups of $S_4$ of order $8$. Similarly $3$ also cannot be partitioned only using the numbers of permutations in the Table \ref{tab:tab1}
+    \end{proof}
+\end{answer}

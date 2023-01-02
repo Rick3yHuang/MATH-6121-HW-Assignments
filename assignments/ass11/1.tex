@@ -1,0 +1,11 @@
+\section{Question 1}
+
+\begin{question}
+    Let $G$ be a group, and let $H$ be a subgroup of $G$. If every prime $p$ dividing $|H|$ is at least $[G: H]$, prove that $H$ is a normal subgroup of $G$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        Let $[G:H] = m$ and $\lvert H \rvert = p_1^{k_1}\cdots p_n^{k_n}$. From the description of the question, we know that $m \leq p_i$ for all $i \in \{1,\cdots,n\}$. Let $G/H$ denotes the set of left cosets. Look at the action of $G$ acting on the $G/H$ by left multiplication. We know that $\lvert G/H \rvert = [G: H] = m$, so that there is a homomorphism $\varphi$ between $G$ and the permutation representation $S_m$. Then, $\ker \varphi = \{g \in G \mid g.fH = fH \text{ for all } fH \in G/H\}$. In particular, we have $g.H = H \Leftrightarrow gH = H \Leftrightarrow g \in H$. Hence, $\ker \varphi \subseteq H$. If we look their orders, we have the following conditions: $\lvert \ker \varphi \rvert \leq \lvert H \rvert = m$, and $\lvert S_m \rvert = m!$. Now, we could apply the First Isomorphism Theorem to $\varphi$, then we know that $G/\ker \varphi \cong \im \varphi$. Since the index are transitive, then we have $\lvert G/ \ker \varphi \rvert = [G:\ker\varphi] = [G:H][H:\ker\varphi] = m[H:\ker\varphi]$. Also, since $\im \varphi \leqslant S_m$, and $S_m$ finite, then $\lvert \im \varphi \rvert \mid m!$ by the Lagrange Theorem. Now, we have $m[H:\ker \varphi] \mid m! \Leftrightarrow [H:\ker\varphi] \mid (m-1)!$. If $[H:\ker \varphi] \neq 1$, then, there must be some prime $p_j \in \{p_1,\cdots,p_n\}$ such that $p_j \mid [H:\ker\varphi] \mid \lvert \ker \varphi \rvert \mid (m-1)!$. This is not possible since $p_j \geq m$ and $p$ is prime, which means $\gcd(p,x) = 1$ for all $x\in \{1,\cdots,m-1\}$. Hence, we must have $[H:\ker\varphi] = 1$, which means $H = \ker \varphi$. Because $\ker \varphi \triangleleft G$, then $H \triangleleft G$.
+    \end{proof}
+\end{answer}

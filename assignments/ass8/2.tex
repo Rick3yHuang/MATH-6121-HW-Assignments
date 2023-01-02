@@ -1,0 +1,35 @@
+\section{Question 2}
+
+\begin{question}
+    Let $K$ be a field and let $f(x)$ be a polynomial in $K[x]$.
+\end{question}
+
+\subsection{Part a}
+
+\begin{question}
+    Prove that $K[x] /(f(x))$ is a field if and only if $f(x)$ is irreducible in $K[x]$.
+\end{question}
+
+\begin{answer}
+    \begin{proof}
+        ($\Rightarrow$): Assume $K[x]/(f(x))$ is a field, then $f(x)$ is an maximal ideal, then $f(x)$ is a prime ideal, since maximal implies prime. Then $f(x)$ is prime in $K[x]$, and because $K$ is a field, therefore an integral domain, we know that prime elements are irreducible. Hence, $f(x)$ is irreducible in $K[x]$.
+        
+        ($\Leftarrow$): Assume $f(x)$ is irreducible in $K[x]$, then assume by contradiction that $K[x]/(f(x))$ is not a field, then $(f(x))$ is not maximal, then since $K$ is a field, $K[x]$ is a P.I.D., then there exists $g(x) \in K[x]$ ($\deg g(x) \geq 1$) such that $(g(x))$ is a proper ideal of $K[x]$ and $(g(x)) \supset (f(x))$. Hence, $g(x)\mid f(x)$, so that $f(x)$ is reducible in $K[x]$ which is a contradiction to the assumption.
+    \end{proof}
+\end{answer}
+
+\subsection{Part b}
+
+\begin{question}
+    If $K=\mathbf{F}_p$ is the field of integers modulo $p$ and $f(x)$ is irreducible of degree $n$, prove that $K[x] /(f(x))$ is a field with $p^n$ elements.
+\end{question}
+
+\begin{answer}
+    By Part a, since $f(x)$ is irreducible, then $K[x]/(f(x))$ is a field. Then, since $\deg f(x) = n$, the field
+    \begin{equation}
+        K[x]/(f(x)) = \{a_{n-1}x^{n-1}+a_{n-2}x^{n-2}+\cdots+a_1x+a_0 \mid a_0,a_1,\cdots,a_{n-2},a_{n-1} \in K\}
+    \end{equation}
+    by using the division algorithm to reduce any polynomials in $K[x]$ with degree higher than $n$ into a polynomial in the above form.
+    
+    Therefore, since $K = \mathbb{F}_p$, there are $p$ options ($\{0,1,\cdots,p-1\}$) for each $a_i$ for $i = 0,1,\cdots,n-1$. Hence, there will be $p^n$ polynomials in $K[x]$ with degree smaller than $n$. Thus, there are $p^n$ elements in $K[x]/(f(x))$.
+\end{answer}
